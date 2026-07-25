@@ -1,0 +1,33 @@
+{
+  "name": "cam-vadisi-menu",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Cam Vadisi Restorant QR menu (misafir arayuzu + API)",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "server": "node server/index.js",
+    "seed": "node server/seed.js",
+    "test": "node --test \"test/*.test.js\""
+  },
+  "dependencies": {
+    "archiver": "^7.0.1",
+    "better-sqlite3": "^12.2.0",
+    "cookie-parser": "^1.4.7",
+    "dotenv": "^17.2.1",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "multer": "^2.0.2",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "sharp": "^0.34.3"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.1.11",
+    "@vitejs/plugin-react": "^5.0.0",
+    "tailwindcss": "^4.1.11",
+    "vite": "^7.1.2"
+  }
+}

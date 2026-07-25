@@ -1,0 +1,17 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "cam-vadisi-menu",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev", "--prefix", "CamVadisi"],
+      "port": 5173
+    },
+    {
+      "name": "cam-vadisi-admin",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev", "--prefix", "CamVadisiAdmin"],
+      "port": 5174
+    }
+  ]
+}

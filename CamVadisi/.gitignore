@@ -1,0 +1,30 @@
+# Kovan kurali: hicbir .md dosyasi GitHub'a gitmez
+*.md
+
+node_modules/
+dist/
+dist-ssr/
+
+# Sirlar
+.env
+.env.*
+!.env.example
+
+# Veritabani tek gercek kaynaktir, depoda tutulmaz
+*.db
+*.db-shm
+*.db-wal
+
+# Anlik goruntu uretilen bir dosya - depoda tutulmaz.
+server/menu-snapshot.json
+
+# NOT: server/uploads/ BILINCLI olarak depoya DAHIL edilir.
+# Icindeki 91 urun fotografi + 10 kategori kapagi eski sistemden goc ettirildi ve
+# `server/menu-content.json` tohum verisi onlara referans veriyor. Hariç tutulsa
+# klonlayan kisi `npm run seed` sonrasi gorselsiz bir menu elde ederdi.
+# Isletme panelden yeni gorsel yukledikce burasi buyuyecek; o noktada gorseller
+# yedekten (deploy/yedek.sh) yonetilir, depodan degil.
+
+*.local
+.DS_Store
+Thumbs.db

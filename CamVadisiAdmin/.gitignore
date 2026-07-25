@@ -1,0 +1,15 @@
+# Kovan kurali: hicbir .md dosyasi GitHub'a gitmez
+*.md
+
+node_modules/
+dist/
+dist-ssr/
+
+# Sirlar
+.env
+.env.*
+!.env.example
+
+*.local
+.DS_Store
+Thumbs.db

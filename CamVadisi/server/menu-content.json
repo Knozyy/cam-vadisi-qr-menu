@@ -1,0 +1,3950 @@
+{
+  "_not": "Cam Vadisi gercek menusu. Kaynak: eski TikaBasa sistemi (2026-07-24). Bu dosya seed.js tarafindan okunur; yayindan sonra tek gercek kaynak data.db olur.",
+  "venue": {
+    "name": "Çam Vadisi",
+    "address": "Anadolu kavağı mah. feneryolu cad çam vadisi cafe no:12",
+    "phones": [
+      "5322440815",
+      "5452487990"
+    ],
+    "location": [
+      41.1776231,
+      29.0958964
+    ],
+    "wifiPassword": ""
+  },
+  "categories": [
+    {
+      "slug": "kahvalti-cesitleri",
+      "name": {
+        "tr": "Kahvaltı Çeşitleri",
+        "en": "Breakfast",
+        "ar": "الفطور",
+        "ru": "Завтрак"
+      },
+      "timeStart": "",
+      "timeEnd": "",
+      "products": [
+        {
+          "name": {
+            "tr": "Bal Kaymak",
+            "en": "Honey & Clotted Cream",
+            "ar": "عسل وقشطة",
+            "ru": "Мёд со сливками"
+          },
+          "description": {
+            "tr": "Doğal Bal Ve doğal Kaymak.",
+            "en": "Natural honey with clotted cream.",
+            "ar": "",
+            "ru": ""
+          },
+          "ingredients": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "basePrice": 22000,
+          "imageThumb": "/uploads/urun-bal-kaymak-thumb.webp",
+          "imageFull": "/uploads/urun-bal-kaymak-full.webp",
+          "tags": [
+            "vegetarian",
+            "dairy"
+          ],
+          "isHidden": false
+        },
+        {
+          "name": {
+            "tr": "Serpme Kahvaltı (2 Kişilik)",
+            "en": "Spread Breakfast (for 2)",
+            "ar": "فطور مفتوح (لشخصين)",
+            "ru": "Турецкий завтрак (на 2)"
+          },
+          "description": {
+            "tr": "Tereyağında yumurta, zeytin çeşitleri, söğüş, üç çeşit peynir, bal & kaymak, iki çeşit ev reçeli, acuka, patates, pişi, sigara böreği ve sınırsız çay.",
+            "en": "Eggs in butter, olives, sliced vegetables, three cheeses, honey & clotted cream, two homemade jams, acuka, fries, pişi, cheese rolls and unlimited tea.",
+            "ar": "",
+            "ru": ""
+          },
+          "ingredients": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "basePrice": 250000,
+          "imageThumb": "/uploads/urun-serpme-kahvalti-2-kisilik-thumb.webp",
+          "imageFull": "/uploads/urun-serpme-kahvalti-2-kisilik-full.webp",
+          "tags": [
+            "vegetarian",
+            "dairy"
+          ],
+          "isHidden": false
+        },
+        {
+          "name": {
+            "tr": "Serpme Kahvaltı (3 Kişilik)",
+            "en": "Spread Breakfast (for 3)",
+            "ar": "فطور مفتوح (لثلاثة)",
+            "ru": "Турецкий завтрак (на 3)"
+          },
+          "description": {
+            "tr": "Tereyağında yumurta, zeytin çeşitleri, söğüş, üç çeşit peynir, bal & kaymak, iki çeşit ev reçeli, acuka, patates, pişi, sigara böreği ve sınırsız çay.",
+            "en": "Eggs in butter, olives, sliced vegetables, three cheeses, honey & clotted cream, two homemade jams, acuka, fries, pişi, cheese rolls and unlimited tea.",
+            "ar": "",
+            "ru": ""
+          },
+          "ingredients": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "basePrice": 375000,
+          "imageThumb": "/uploads/urun-serpme-kahvalti-3-kisilik-thumb.webp",
+          "imageFull": "/uploads/urun-serpme-kahvalti-3-kisilik-full.webp",
+          "tags": [
+            "vegetarian",
+            "dairy"
+          ],
+          "isHidden": false
+        },
+        {
+          "name": {
+            "tr": "Serpme Kahvaltı (4 Kişilik)",
+            "en": "Spread Breakfast (for 4)",
+            "ar": "فطور مفتوح (لأربعة)",
+            "ru": "Турецкий завтрак (на 4)"
+          },
+          "description": {
+            "tr": "Tereyağında yumurta, zeytin çeşitleri, söğüş, üç çeşit peynir, bal & kaymak, iki çeşit ev reçeli, acuka, patates, pişi, sigara böreği ve sınırsız çay.",
+            "en": "Eggs in butter, olives, sliced vegetables, three cheeses, honey & clotted cream, two homemade jams, acuka, fries, pişi, cheese rolls and unlimited tea.",
+            "ar": "",
+            "ru": ""
+          },
+          "ingredients": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "basePrice": 500000,
+          "imageThumb": "/uploads/urun-serpme-kahvalti-4-kisilik-thumb.webp",
+          "imageFull": "/uploads/urun-serpme-kahvalti-4-kisilik-full.webp",
+          "tags": [
+            "vegetarian",
+            "dairy"
+          ],
+          "isHidden": false
+        },
+        {
+          "name": {
+            "tr": "Serpme Kahvaltı (5 Kişilik)",
+            "en": "Spread Breakfast (for 5)",
+            "ar": "فطور مفتوح (لخمسة)",
+            "ru": "Турецкий завтрак (на 5)"
+          },
+          "description": {
+            "tr": "Tereyağında yumurta, zeytin çeşitleri, söğüş, üç çeşit peynir, bal & kaymak, iki çeşit ev reçeli, acuka, patates, pişi, sigara böreği ve sınırsız çay.",
+            "en": "Eggs in butter, olives, sliced vegetables, three cheeses, honey & clotted cream, two homemade jams, acuka, fries, pişi, cheese rolls and unlimited tea.",
+            "ar": "",
+            "ru": ""
+          },
+          "ingredients": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "basePrice": 625000,
+          "imageThumb": "/uploads/urun-serpme-kahvalti-5-kisilik-thumb.webp",
+          "imageFull": "/uploads/urun-serpme-kahvalti-5-kisilik-full.webp",
+          "tags": [
+            "vegetarian",
+            "dairy"
+          ],
+          "isHidden": false
+        },
+        {
+          "name": {
+            "tr": "Trabzon Kuymağı",
+            "en": "Trabzon Kuymak",
+            "ar": "كويماك طرابزون",
+            "ru": "Куймак из Трабзона"
+          },
+          "description": {
+            "tr": "Mısır unu, tereyağı ve uzayan Trabzon peyniriyle tavada hazırlanır; sıcak servis edilir.",
+            "en": "Cornmeal, butter and stretchy Trabzon cheese cooked in a pan, served hot.",
+            "ar": "",
+            "ru": ""
+          },
+          "ingredients": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "basePrice": 39000,
+          "imageThumb": "/uploads/urun-trabzon-kuymagi-thumb.webp",
+          "imageFull": "/uploads/urun-trabzon-kuymagi-full.webp",
+          "tags": [
+            "vegetarian",
+            "dairy"
+          ],
+          "isHidden": false
+        },
+        {
+          "name": {
+            "tr": "Zeytin Tabağı",
+            "en": "Olive Plate",
+            "ar": "طبق زيتون",
+            "ru": "Оливки"
+          },
+          "description": {
+            "tr": "Siyah ve yeşil zeytin çeşitlerinden oluşur. Sade, doğal ve sofrayı tamamlayan klasik.",
+            "en": "Black and green olive varieties.",
+            "ar": "",
+            "ru": ""
+          },
+          "ingredients": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "basePrice": 16000,
+          "imageThumb": "/uploads/urun-zeytin-tabagi-thumb.webp",
+          "imageFull": "/uploads/urun-zeytin-tabagi-full.webp",
+          "tags": [
+            "vegetarian"
+          ],
+          "isHidden": false
+        },
+        {
+          "name": {
+            "tr": "Vişne Reçeli",
+            "en": "Sour Cherry Jam",
+            "ar": "مربى الكرز الحامض",
+            "ru": "Вишнёвое варенье"
+          },
+          "description": {
+            "tr": "Mevsim vişnelerinden hazırlanır. Dengeli tatlı-ekşi aromasıyla kahvaltının vazgeçilmez eşlikçisi.",
+            "en": "Made from seasonal sour cherries.",
+            "ar": "",
+            "ru": ""
+          },
+          "ingredients": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "basePrice": 10000,
+          "imageThumb": "/uploads/urun-recel-visne-thumb.webp",
+          "imageFull": "/uploads/urun-recel-visne-full.webp",
+          "tags": [
+            "vegetarian"
+          ],
+          "isHidden": false
+        },
+        {
+          "name": {
+            "tr": "Sahanda Yumurta",
+            "en": "Fried Eggs",
+            "ar": "بيض مقلي",
+            "ru": "Яичница"
+          },
+          "description": {
+            "tr": "Taze yumurtalar, sahanda yavaşça pişirilir. Sarısı akışkan, beyazı tam kıvamındadır.",
+            "en": "Fresh eggs cooked slowly in the pan; runny yolk, set white.",
+            "ar": "",
+            "ru": ""
+          },
+          "ingredients": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "basePrice": 9000,
+          "imageThumb": "/uploads/urun-sahanda-yumurta-thumb.webp",
+          "imageFull": "/uploads/urun-sahanda-yumurta-full.webp",
+          "tags": [
+            "vegetarian"
+          ],
+          "isHidden": false
+        },
+        {
+          "name": {
+            "tr": "Sosis Tabağı (Sade)",
+            "en": "Sausage Plate (Plain)",
+            "ar": "طبق نقانق (سادة)",
+            "ru": "Сосиски (простые)"
+          },
+          "description": {
+            "tr": "Dilimlenmiş sosisler tavada kızartılır. Pratik, doyurucu ve özellikle çocukların favorisi.",
+            "en": "Sliced sausages pan-fried.",
+            "ar": "",
+            "ru": ""
+          },
+          "ingredients": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "basePrice": 26000,
+          "imageThumb": "",
+          "imageFull": "",
+          "tags": [],
+          "isHidden": false
+        },
+        {
+          "name": {
+            "tr": "Sucuk Tava",
+            "en": "Pan-Fried Sucuk",
+            "ar": "سجق مقلي",
+            "ru": "Суджук на сковороде"
+          },
+          "description": {
+            "tr": "Doğranmış sucuklar, kendi yağıyla tavada kızartılır. Dışı hafif çıtır, içi sulu kalır.",
+            "en": "Sliced Turkish sucuk fried in its own fat; crisp outside, juicy inside.",
+            "ar": "",
+            "ru": ""
+          },
+          "ingredients": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "basePrice": 38000,
+          "imageThumb": "/uploads/urun-sucuk-tava-thumb.webp",
+          "imageFull": "/uploads/urun-sucuk-tava-full.webp",
+          "tags": [],
+          "isHidden": false
+        },
+        {
+          "name": {
+            "tr": "Sucuklu Menemen",
+            "en": "Menemen with Sucuk",
+            "ar": "منمن بالسجق",
+            "ru": "Менемен с суджуком"
+          },
+          "description": {
+            "tr": "Taze domates ve biberle hazırlanan menemen, sucukla birlikte tavada pişirilir. Sucuktan gelen aroma yemeğe geçer.",
+            "en": "Scrambled eggs with tomato and pepper, cooked together with Turkish sucuk.",
+            "ar": "",
+            "ru": ""
+          },
+          "ingredients": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "basePrice": 49500,
+          "imageThumb": "",
+          "imageFull": "",
+          "tags": [],
+          "isHidden": false
+        },
+        {
+          "name": {
+            "tr": "Sucuklu Yumurta",
+            "en": "Eggs with Sucuk",
+            "ar": "بيض بالسجق",
+            "ru": "Яйца с суджуком"
+          },
+          "description": {
+            "tr": "Sucuklar kendi yağıyla tavada çevrilir, üzerine taze yumurta kırılır. Sarısı akışkan, lezzeti yoğun.",
+            "en": "Sucuk turned in its own fat with fresh eggs cracked over it.",
+            "ar": "",
+            "ru": ""
+          },
+          "ingredients": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "basePrice": 34000,
+          "imageThumb": "/uploads/urun-sucuklu-yumurta-thumb.webp",
+          "imageFull": "/uploads/urun-sucuklu-yumurta-full.webp",
+          "tags": [],
+          "isHidden": false
+        },
+        {
+          "name": {
+            "tr": "Haşlama Yumurta",
+            "en": "Boiled Eggs",
+            "ar": "بيض مسلوق",
+            "ru": "Отварные яйца"
+          },
+          "description": {
+            "tr": "Taze yumurtalar, ideal kıvamda haşlanır. Sade, besleyici ve hafif bir tercih.",
+            "en": "Fresh eggs boiled to the ideal consistency.",
+            "ar": "",
+            "ru": ""
+          },
+          "ingredients": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "basePrice": 5000,
+          "imageThumb": "/uploads/urun-haslama-yumurta-thumb.webp",
+          "imageFull": "/uploads/urun-haslama-yumurta-full.webp",
+          "tags": [
+            "vegetarian"
+          ],
+          "isHidden": false
+        },
+        {
+          "name": {
+            "tr": "Karışık Menemen",
+            "en": "Mixed Menemen",
+            "ar": "منمن مشكل",
+            "ru": "Менемен ассорти"
+          },
+          "description": {
+            "tr": "Taze domates, biber ve yumurta; sucuk ve peynirle birlikte hazırlanır. Tavada, sulu bırakılmadan pişirilir.",
+            "en": "Tomato, pepper and egg prepared with sucuk and cheese.",
+            "ar": "",
+            "ru": ""
+          },
+          "ingredients": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "basePrice": 52000,
+          "imageThumb": "",
+          "imageFull": "",
+          "tags": [
+            "dairy"
+          ],
+          "isHidden": false
+        },
+        {
+          "name": {
+            "tr": "Karışık Omlet",
+            "en": "Mixed Omelette",
+            "ar": "أومليت مشكل",
+            "ru": "Омлет ассорти"
+          },
+          "description": {
+            "tr": "Yumurta, sucuk, peynir ve sebzelerle hazırlanır. Tavada, yumuşak dokusu korunarak pişirilir.",
+            "en": "Egg, sucuk, cheese and vegetables, cooked soft in the pan.",
+            "ar": "",
+            "ru": ""
+          },
+          "ingredients": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "basePrice": 35000,
+          "imageThumb": "",
+          "imageFull": "",
+          "tags": [
+            "dairy"
+          ],
+          "isHidden": false
+        },
+        {
+          "name": {
+            "tr": "Kaşarlı Menemen",
+            "en": "Menemen with Kaşar Cheese",
+            "ar": "منمن بالجبن",
+            "ru": "Менемен с сыром"
+          },
+          "description": {
+            "tr": "Taze domates ve biberle hazırlanan menemen, eriyen kaşar peyniriyle tamamlanır. Tavada, sulu bırakılmadan pişirilir.",
+            "en": "Tomato and pepper menemen finished with melting kaşar cheese.",
+            "ar": "",
+            "ru": ""
+          },
+          "ingredients": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "basePrice": 40000,
+          "imageThumb": "/uploads/urun-kasarli-menemen-thumb.webp",
+          "imageFull": "/uploads/urun-kasarli-menemen-full.webp",
+          "tags": [
+            "vegetarian",
+            "dairy"
+          ],
+          "isHidden": false
+        },
+        {
+          "name": {
+            "tr": "Portakal Reçeli (1 kg Kavanoz)",
+            "en": "Orange Jam (1 kg Jar)",
+            "ar": "مربى البرتقال (١ كغ)",
+            "ru": "Апельсиновое варенье (1 кг)"
+          },
+          "description": {
+            "tr": "Mevsim portakallarından hazırlanır. Dengeli tatlılığı ve ferah aromasıyla kahvaltıyı tamamlar.",
+            "en": "Made from seasonal oranges.",
+            "ar": "",
+            "ru": ""
+          },
+          "ingredients": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "basePrice": 45000,
+          "imageThumb": "",
+          "imageFull": "",
+          "tags": [
+            "vegetarian"
+          ],
+          "isHidden": false
+        },
+        {
+          "name": {
+            "tr": "Kavurma (Yumurtasız)",
+            "en": "Kavurma (without Egg)",
+            "ar": "كاورما (بدون بيض)",
+            "ru": "Кавурма (без яйца)"
+          },
+          "description": {
+            "tr": "Dana etinden hazırlanan kavurma, kendi yağıyla tavada ısıtılır. Saf et lezzeti, yoğun ve doyurucu.",
+            "en": "Beef kavurma warmed in its own fat; pure, rich meat flavour.",
+            "ar": "",
+            "ru": ""
+          },
+          "ingredients": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "basePrice": 60000,
+          "imageThumb": "/uploads/urun-kavurma-yumurtasiz-thumb.webp",
+          "imageFull": "/uploads/urun-kavurma-yumurtasiz-full.webp",
+          "tags": [],
+          "isHidden": false
+        },
+        {
+          "name": {
+            "tr": "Menemen",
+            "en": "Menemen",
+            "ar": "منمن",
+            "ru": "Менемен"
+          },
+          "description": {
+            "tr": "Taze domates, biber ve yumurta ile hazırlanır. Tavada, doğal lezzeti korunarak pişirilir.",
+            "en": "Fresh tomato, pepper and egg cooked in a pan.",
+            "ar": "",
+            "ru": ""
+          },
+          "ingredients": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "basePrice": 36000,
+          "imageThumb": "/uploads/urun-menemen-thumb.webp",
+          "imageFull": "/uploads/urun-menemen-full.webp",
+          "tags": [
+            "vegetarian"
+          ],
+          "isHidden": false
+        },
+        {
+          "name": {
+            "tr": "Portakal Reçeli",
+            "en": "Orange Jam",
+            "ar": "مربى البرتقال",
+            "ru": "Апельсиновое варенье"
+          },
+          "description": {
+            "tr": "Mevsim portakallarından hazırlanır. Dengeli tatlılığı ve ferah aromasıyla kahvaltıyı tamamlar.",
+            "en": "Made from seasonal oranges.",
+            "ar": "",
+            "ru": ""
+          },
+          "ingredients": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "basePrice": 10000,
+          "imageThumb": "/uploads/urun-recel-portakal-thumb.webp",
+          "imageFull": "/uploads/urun-recel-portakal-full.webp",
+          "tags": [
+            "vegetarian"
+          ],
+          "isHidden": false
+        }
+      ]
+    },
+    {
+      "slug": "aperatif-cesitleri",
+      "name": {
+        "tr": "Aperatif Çeşitleri",
+        "en": "Starters & Salads",
+        "ar": "المقبلات والسلطات",
+        "ru": "Закуски и салаты"
+      },
+      "timeStart": "",
+      "timeEnd": "",
+      "products": [
+        {
+          "name": {
+            "tr": "Sucuklu Tost",
+            "en": "Sucuk Toastie",
+            "ar": "توست بالسجق",
+            "ru": "Тост с суджуком"
+          },
+          "description": {
+            "tr": "Tost ekmeği arasında sucuk. Dışı çıtır, içi sıcak ve doyurucu.",
+            "en": "Turkish sucuk in toasted bread; crisp outside, hot inside.",
+            "ar": "",
+            "ru": ""
+          },
+          "ingredients": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "basePrice": 29000,
+          "imageThumb": "/uploads/urun-sucuklu-tost-thumb.webp",
+          "imageFull": "/uploads/urun-sucuklu-tost-full.webp",
+          "tags": [
+            "dairy"
+          ],
+          "isHidden": false
+        },
+        {
+          "name": {
+            "tr": "Çerez Tabağı",
+            "en": "Nut & Snack Plate",
+            "ar": "طبق مكسرات",
+            "ru": "Орехи и снеки"
+          },
+          "description": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "ingredients": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "basePrice": 35000,
+          "imageThumb": "",
+          "imageFull": "",
+          "tags": [
+            "vegetarian",
+            "nuts"
+          ],
+          "isHidden": false
+        },
+        {
+          "name": {
+            "tr": "Meyve Tabağı",
+            "en": "Fruit Plate",
+            "ar": "طبق فواكه",
+            "ru": "Фруктовая тарелка"
+          },
+          "description": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "ingredients": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "basePrice": 40000,
+          "imageThumb": "/uploads/urun-meyve-tabagi-thumb.webp",
+          "imageFull": "/uploads/urun-meyve-tabagi-full.webp",
+          "tags": [
+            "vegetarian"
+          ],
+          "isHidden": false
+        },
+        {
+          "name": {
+            "tr": "Gözleme",
+            "en": "Gözleme (Flatbread)",
+            "ar": "كوزلمه",
+            "ru": "Гёзлеме"
+          },
+          "description": {
+            "tr": "Taze köy peyniriyle hazırlanan, incecik açılmış hamurda klasik lezzet.",
+            "en": "Hand-rolled thin flatbread with fresh village cheese.",
+            "ar": "",
+            "ru": ""
+          },
+          "ingredients": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "basePrice": 40000,
+          "imageThumb": "/uploads/urun-gozleme-thumb.webp",
+          "imageFull": "/uploads/urun-gozleme-full.webp",
+          "tags": [
+            "vegetarian",
+            "dairy"
+          ],
+          "isHidden": false
+        },
+        {
+          "name": {
+            "tr": "Kruvasan",
+            "en": "Croissant",
+            "ar": "كرواسان",
+            "ru": "Круассан"
+          },
+          "description": {
+            "tr": "Her sabah taze pişirilen tereyağlı kruvasan.",
+            "en": "Buttery croissant, baked fresh each morning.",
+            "ar": "",
+            "ru": ""
+          },
+          "ingredients": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "basePrice": 12000,
+          "imageThumb": "",
+          "imageFull": "",
+          "tags": [
+            "vegetarian",
+            "dairy"
+          ],
+          "isHidden": false
+        },
+        {
+          "name": {
+            "tr": "Söğüş Tabağı",
+            "en": "Fresh Vegetable Plate",
+            "ar": "طبق خضار طازجة",
+            "ru": "Свежие овощи"
+          },
+          "description": {
+            "tr": "Domates, salatalık, soğan ve yeşilliklerden oluşur. Taze, ferah ve sofrayı dengeleyen klasik eşlikçi.",
+            "en": "Tomato, cucumber, onion and greens.",
+            "ar": "",
+            "ru": ""
+          },
+          "ingredients": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "basePrice": 25000,
+          "imageThumb": "/uploads/urun-sogus-tabagi-thumb.webp",
+          "imageFull": "/uploads/urun-sogus-tabagi-full.webp",
+          "tags": [
+            "vegetarian"
+          ],
+          "isHidden": false
+        },
+        {
+          "name": {
+            "tr": "Çorba",
+            "en": "Soup of the Day",
+            "ar": "شوربة اليوم",
+            "ru": "Суп дня"
+          },
+          "description": {
+            "tr": "Günlük hazırlanan sıcak çorba. Hafif, doyurucu ve güne iyi bir başlangıç.",
+            "en": "Hot soup prepared daily.",
+            "ar": "",
+            "ru": ""
+          },
+          "ingredients": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "basePrice": 26000,
+          "imageThumb": "",
+          "imageFull": "",
+          "tags": [],
+          "isHidden": false
+        },
+        {
+          "name": {
+            "tr": "Pişi",
+            "en": "Pişi (Fried Dough)",
+            "ar": "عجين مقلي",
+            "ru": "Пиши (жареное тесто)"
+          },
+          "description": {
+            "tr": "Mayalı hamurdan hazırlanır, kızgın yağda altın rengini alana kadar kızartılır. Dışı çıtır, içi yumuşaktır.",
+            "en": "Leavened dough fried golden; crisp outside, soft inside.",
+            "ar": "",
+            "ru": ""
+          },
+          "ingredients": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "basePrice": 25000,
+          "imageThumb": "",
+          "imageFull": "",
+          "tags": [
+            "vegetarian"
+          ],
+          "isHidden": false
+        },
+        {
+          "name": {
+            "tr": "Peynirli Roka Salatası",
+            "en": "Rocket & Cheese Salad",
+            "ar": "سلطة جرجير بالجبن",
+            "ru": "Салат с рукколой и сыром"
+          },
+          "description": {
+            "tr": "Taze roka yaprakları, beyaz peynir ve zeytinyağıyla hazırlanır. Hafif, ferah ve dengeli bir salata.",
+            "en": "Fresh rocket leaves with white cheese and olive oil.",
+            "ar": "",
+            "ru": ""
+          },
+          "ingredients": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "basePrice": 32500,
+          "imageThumb": "",
+          "imageFull": "",
+          "tags": [
+            "vegetarian",
+            "dairy"
+          ],
+          "isHidden": false
+        },
+        {
+          "name": {
+            "tr": "Omlet",
+            "en": "Omelette",
+            "ar": "أومليت",
+            "ru": "Омлет"
+          },
+          "description": {
+            "tr": "Taze yumurtalarla hazırlanır, tavada yumuşak kıvamda pişirilir. Sade, hafif ve her öğüne uygun klasik.",
+            "en": "Fresh eggs cooked soft in the pan.",
+            "ar": "",
+            "ru": ""
+          },
+          "ingredients": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "basePrice": 19500,
+          "imageThumb": "",
+          "imageFull": "",
+          "tags": [
+            "vegetarian"
+          ],
+          "isHidden": false
+        },
+        {
+          "name": {
+            "tr": "Gavurdağı Salata",
+            "en": "Gavurdağı Salad",
+            "ar": "سلطة غاوورداغ",
+            "ru": "Салат Гавурдаы"
+          },
+          "description": {
+            "tr": "Sı Doğranmış domates, salatalık, soğan ve ceviz; nar ekşisi ve zeytinyağıyla hazırlanır. Ekşi-tatlı dengesi yerinde, iştah açan klasik salata.",
+            "en": "Diced tomato, cucumber, onion and walnut with pomegranate molasses and olive oil.",
+            "ar": "",
+            "ru": ""
+          },
+          "ingredients": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "basePrice": 32500,
+          "imageThumb": "/uploads/urun-gavurdagi-salata-thumb.webp",
+          "imageFull": "/uploads/urun-gavurdagi-salata-full.webp",
+          "tags": [
+            "vegetarian",
+            "nuts"
+          ],
+          "isHidden": false
+        },
+        {
+          "name": {
+            "tr": "Tost",
+            "en": "Cheese Toastie",
+            "ar": "توست بالجبن",
+            "ru": "Тост с сыром"
+          },
+          "description": {
+            "tr": "Ekmeği arasında eriyen kaşar peyniriyle hazırlanır. Dışı çıtır, içi yumuşak.",
+            "en": "Melting kaşar cheese in toasted bread.",
+            "ar": "",
+            "ru": ""
+          },
+          "ingredients": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "basePrice": 29000,
+          "imageThumb": "/uploads/urun-tost-thumb.webp",
+          "imageFull": "/uploads/urun-tost-full.webp",
+          "tags": [
+            "vegetarian",
+            "dairy"
+          ],
+          "isHidden": false
+        },
+        {
+          "name": {
+            "tr": "Sucuklu Ekmek",
+            "en": "Sucuk Sandwich",
+            "ar": "سندويش سجق",
+            "ru": "Сэндвич с суджуком"
+          },
+          "description": {
+            "tr": "Izgarada pişirilen sucuk, taze ekmekle servis edilir. Doyurucu, pratik ve net bir lezzet.",
+            "en": "Grilled Turkish sucuk served in fresh bread.",
+            "ar": "",
+            "ru": ""
+          },
+          "ingredients": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "basePrice": 48000,
+          "imageThumb": "",
+          "imageFull": "",
+          "tags": [],
+          "isHidden": false
+        },
+        {
+          "name": {
+            "tr": "Kavurmalı Kaşarlı Tost",
+            "en": "Kavurma & Cheese Toastie",
+            "ar": "توست بالكاورما والجبن",
+            "ru": "Тост с кавурмой и сыром"
+          },
+          "description": {
+            "tr": "Tost ekmeği arasında dana kavurma ve eriyen kaşar peyniriyle hazırlanır. Dışı çıtır, içi yoğun ve doyurucu.",
+            "en": "Beef kavurma and melting kaşar cheese in toasted bread.",
+            "ar": "",
+            "ru": ""
+          },
+          "ingredients": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "basePrice": 50000,
+          "imageThumb": "/uploads/urun-kavurmali-kasarli-tost-thumb.webp",
+          "imageFull": "/uploads/urun-kavurmali-kasarli-tost-full.webp",
+          "tags": [
+            "dairy"
+          ],
+          "isHidden": false
+        },
+        {
+          "name": {
+            "tr": "Peynir (Porsiyon)",
+            "en": "Cheese (Portion)",
+            "ar": "جبن (حصة)",
+            "ru": "Сыр (порция)"
+          },
+          "description": {
+            "tr": "Günlük ve taze peynir çeşitleri. Kahvaltının sade ve vazgeçilmez eşlikçisi.",
+            "en": "Fresh daily cheese varieties.",
+            "ar": "",
+            "ru": ""
+          },
+          "ingredients": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "basePrice": 12000,
+          "imageThumb": "/uploads/urun-peynir-adet-thumb.webp",
+          "imageFull": "/uploads/urun-peynir-adet-full.webp",
+          "tags": [
+            "vegetarian",
+            "dairy"
+          ],
+          "isHidden": false
+        },
+        {
+          "name": {
+            "tr": "Peynir Tabağı",
+            "en": "Cheese Plate",
+            "ar": "طبق أجبان",
+            "ru": "Сырная тарелка"
+          },
+          "description": {
+            "tr": "Peynir Günlük ve taze peynir çeşitleri. Kahvaltının sade ve vazgeçilmez eşlikçisi.",
+            "en": "Fresh daily cheese varieties.",
+            "ar": "",
+            "ru": ""
+          },
+          "ingredients": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "basePrice": 41000,
+          "imageThumb": "/uploads/urun-peynir-tabagi-thumb.webp",
+          "imageFull": "/uploads/urun-peynir-tabagi-full.webp",
+          "tags": [
+            "vegetarian",
+            "dairy"
+          ],
+          "isHidden": false
+        },
+        {
+          "name": {
+            "tr": "Mevsim Salata",
+            "en": "Seasonal Salad",
+            "ar": "سلطة الموسم",
+            "ru": "Сезонный салат"
+          },
+          "description": {
+            "tr": "Mevsimine göre taze yeşillikler ve sebzelerle hazırlanır. Hafif, ferah ve her yemeğin yanına yakışır.",
+            "en": "Fresh seasonal greens and vegetables.",
+            "ar": "",
+            "ru": ""
+          },
+          "ingredients": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "basePrice": 32000,
+          "imageThumb": "/uploads/urun-mevsim-salata-thumb.webp",
+          "imageFull": "/uploads/urun-mevsim-salata-full.webp",
+          "tags": [
+            "vegetarian"
+          ],
+          "isHidden": false
+        },
+        {
+          "name": {
+            "tr": "Çoban Salata",
+            "en": "Shepherd Salad",
+            "ar": "سلطة الراعي",
+            "ru": "Пастуший салат"
+          },
+          "description": {
+            "tr": "Domates, salatalık, biber ve soğan; zeytinyağı ve limonla hazırlanır. Taze, ferah ve klasik bir salata.",
+            "en": "Tomato, cucumber, pepper and onion with olive oil and lemon.",
+            "ar": "",
+            "ru": ""
+          },
+          "ingredients": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "basePrice": 32000,
+          "imageThumb": "/uploads/urun-oban-salata-thumb.webp",
+          "imageFull": "/uploads/urun-oban-salata-full.webp",
+          "tags": [
+            "vegetarian"
+          ],
+          "isHidden": false
+        },
+        {
+          "name": {
+            "tr": "Sosis Tabağı",
+            "en": "Sausage Plate",
+            "ar": "طبق نقانق",
+            "ru": "Сосиски"
+          },
+          "description": {
+            "tr": "Dilimlenmiş sosisler tavada kızartılır. Pratik, doyurucu ve özellikle çocukların favorisi.",
+            "en": "Sliced sausages pan-fried.",
+            "ar": "",
+            "ru": ""
+          },
+          "ingredients": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "basePrice": 39000,
+          "imageThumb": "/uploads/urun-sosis-tabagi-thumb.webp",
+          "imageFull": "/uploads/urun-sosis-tabagi-full.webp",
+          "tags": [],
+          "isHidden": false
+        },
+        {
+          "name": {
+            "tr": "Patates Kızartması",
+            "en": "Fries",
+            "ar": "بطاطا مقلية",
+            "ru": "Картофель фри"
+          },
+          "description": {
+            "tr": "Taze patateslerden hazırlanır, kızgın yağda altın rengini alana kadar kızartılır. Dışı çıtır, içi yumuşak.",
+            "en": "Fresh potatoes fried golden; crisp outside, soft inside.",
+            "ar": "",
+            "ru": ""
+          },
+          "ingredients": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "basePrice": 32000,
+          "imageThumb": "/uploads/urun-patates-kizartmasi-thumb.webp",
+          "imageFull": "/uploads/urun-patates-kizartmasi-full.webp",
+          "tags": [
+            "vegetarian"
+          ],
+          "isHidden": false
+        },
+        {
+          "name": {
+            "tr": "Sigara Böreği",
+            "en": "Cheese Rolls",
+            "ar": "بورك بالجبن",
+            "ru": "Сигара-бёрек"
+          },
+          "description": {
+            "tr": "İnce yufkaya sarılı peynirli iç harçla hazırlanır. Kızgın yağda çıtır kızartılır.",
+            "en": "Thin pastry rolled with cheese filling and fried crisp.",
+            "ar": "",
+            "ru": ""
+          },
+          "ingredients": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "basePrice": 30000,
+          "imageThumb": "/uploads/urun-sigara-boregi-thumb.webp",
+          "imageFull": "/uploads/urun-sigara-boregi-full.webp",
+          "tags": [
+            "vegetarian",
+            "dairy"
+          ],
+          "isHidden": false
+        },
+        {
+          "name": {
+            "tr": "Karışık Tost",
+            "en": "Mixed Toastie",
+            "ar": "توست مشكل",
+            "ru": "Тост ассорти"
+          },
+          "description": {
+            "tr": "Tost ekmeği arasında sucuk, sosis, kaşar peyniri ve domatesle hazırlanır. Doyurucu, yoğun ve her zaman iş yapan klasik.",
+            "en": "Sucuk, sausage, kaşar cheese and tomato in toasted bread.",
+            "ar": "",
+            "ru": ""
+          },
+          "ingredients": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "basePrice": 33000,
+          "imageThumb": "/uploads/urun-karisik-tost-thumb.webp",
+          "imageFull": "/uploads/urun-karisik-tost-full.webp",
+          "tags": [
+            "dairy"
+          ],
+          "isHidden": false
+        }
+      ]
+    },
+    {
+      "slug": "ara-sicaklar",
+      "name": {
+        "tr": "Ara Sıcaklar",
+        "en": "Hot Dishes",
+        "ar": "أطباق ساخنة",
+        "ru": "Горячие блюда"
+      },
+      "timeStart": "",
+      "timeEnd": "",
+      "products": [
+        {
+          "name": {
+            "tr": "Karışık Omlet",
+            "en": "Mixed Omelette",
+            "ar": "أومليت مشكل",
+            "ru": "Омлет ассорти"
+          },
+          "description": {
+            "tr": "Yumurta, sucuk, peynir ve sebzelerle hazırlanır. Tavada, yumuşak dokusu korunarak pişirilir.",
+            "en": "Egg, sucuk, cheese and vegetables, cooked soft in the pan.",
+            "ar": "",
+            "ru": ""
+          },
+          "ingredients": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "basePrice": 35000,
+          "imageThumb": "",
+          "imageFull": "",
+          "tags": [
+            "dairy"
+          ],
+          "isHidden": false
+        },
+        {
+          "name": {
+            "tr": "Kaşarlı Menemen",
+            "en": "Menemen with Kaşar Cheese",
+            "ar": "منمن بالجبن",
+            "ru": "Менемен с сыром"
+          },
+          "description": {
+            "tr": "Taze domates ve biberle hazırlanan menemen, eriyen kaşar peyniriyle tamamlanır. Tavada, sulu bırakılmadan pişirilir.",
+            "en": "Tomato and pepper menemen finished with melting kaşar cheese.",
+            "ar": "",
+            "ru": ""
+          },
+          "ingredients": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "basePrice": 40000,
+          "imageThumb": "",
+          "imageFull": "",
+          "tags": [
+            "vegetarian",
+            "dairy"
+          ],
+          "isHidden": false
+        },
+        {
+          "name": {
+            "tr": "Menemen",
+            "en": "Menemen",
+            "ar": "منمن",
+            "ru": "Менемен"
+          },
+          "description": {
+            "tr": "Taze domates, biber ve yumurta ile hazırlanır. Tavada, doğal lezzeti korunarak pişirilir.",
+            "en": "Fresh tomato, pepper and egg cooked in a pan.",
+            "ar": "",
+            "ru": ""
+          },
+          "ingredients": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "basePrice": 36000,
+          "imageThumb": "",
+          "imageFull": "",
+          "tags": [
+            "vegetarian"
+          ],
+          "isHidden": false
+        },
+        {
+          "name": {
+            "tr": "Sahanda Yumurta",
+            "en": "Fried Eggs",
+            "ar": "بيض مقلي",
+            "ru": "Яичница"
+          },
+          "description": {
+            "tr": "Taze yumurtalar, sahanda yavaşça pişirilir. Sarısı akışkan, beyazı tam kıvamındadır.",
+            "en": "Fresh eggs cooked slowly in the pan; runny yolk, set white.",
+            "ar": "",
+            "ru": ""
+          },
+          "ingredients": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "basePrice": 9000,
+          "imageThumb": "/uploads/urun-sahanda-yumurta-2-thumb.webp",
+          "imageFull": "/uploads/urun-sahanda-yumurta-2-full.webp",
+          "tags": [
+            "vegetarian"
+          ],
+          "isHidden": false
+        },
+        {
+          "name": {
+            "tr": "Sucuk Tava",
+            "en": "Pan-Fried Sucuk",
+            "ar": "سجق مقلي",
+            "ru": "Суджук на сковороде"
+          },
+          "description": {
+            "tr": "Dilimlenmiş sucuklar kendi yağıyla tavada kızartılır. Dışı hafif çıtır, içi sulu kalır.",
+            "en": "Sliced Turkish sucuk fried in its own fat; crisp outside, juicy inside.",
+            "ar": "",
+            "ru": ""
+          },
+          "ingredients": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "basePrice": 38000,
+          "imageThumb": "/uploads/urun-sucuk-tava-2-thumb.webp",
+          "imageFull": "/uploads/urun-sucuk-tava-2-full.webp",
+          "tags": [],
+          "isHidden": false
+        },
+        {
+          "name": {
+            "tr": "Sucuklu Menemen",
+            "en": "Menemen with Sucuk",
+            "ar": "منمن بالسجق",
+            "ru": "Менемен с суджуком"
+          },
+          "description": {
+            "tr": "Taze domates ve biberle hazırlanan menemen, sucukla birlikte tavada pişirilir. Sucuktan gelen aroma yemeğe geçer.",
+            "en": "Scrambled eggs with tomato and pepper, cooked together with Turkish sucuk.",
+            "ar": "",
+            "ru": ""
+          },
+          "ingredients": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "basePrice": 49500,
+          "imageThumb": "",
+          "imageFull": "",
+          "tags": [],
+          "isHidden": false
+        },
+        {
+          "name": {
+            "tr": "Sucuklu Yumurta",
+            "en": "Eggs with Sucuk",
+            "ar": "بيض بالسجق",
+            "ru": "Яйца с суджуком"
+          },
+          "description": {
+            "tr": "Sucuklar kendi yağıyla tavada çevrilir, üzerine taze yumurta kırılır. Sarısı akışkan, lezzeti yoğun.",
+            "en": "Sucuk turned in its own fat with fresh eggs cracked over it.",
+            "ar": "",
+            "ru": ""
+          },
+          "ingredients": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "basePrice": 34000,
+          "imageThumb": "",
+          "imageFull": "",
+          "tags": [],
+          "isHidden": false
+        },
+        {
+          "name": {
+            "tr": "Kuymak",
+            "en": "Kuymak",
+            "ar": "كويماك",
+            "ru": "Куймак"
+          },
+          "description": {
+            "tr": "Mısır unu, tereyağı ve uzayan peynirle tavada hazırlanır. Sıcak servis edilir.",
+            "en": "Cornmeal, butter and stretchy cheese cooked in a pan, served hot.",
+            "ar": "",
+            "ru": ""
+          },
+          "ingredients": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "basePrice": 39000,
+          "imageThumb": "/uploads/urun-kuymak-thumb.webp",
+          "imageFull": "/uploads/urun-kuymak-full.webp",
+          "tags": [
+            "vegetarian",
+            "dairy"
+          ],
+          "isHidden": false
+        },
+        {
+          "name": {
+            "tr": "Yumurtalı Kavurma",
+            "en": "Kavurma with Egg",
+            "ar": "كاورما بالبيض",
+            "ru": "Кавурма с яйцом"
+          },
+          "description": {
+            "tr": "Dana kavurma tavada ısıtılır, üzerine taze yumurta kırılır. Etin lezzeti yumurtaya geçer.",
+            "en": "Beef kavurma warmed in the pan with fresh eggs cracked over it.",
+            "ar": "",
+            "ru": ""
+          },
+          "ingredients": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "basePrice": 65000,
+          "imageThumb": "/uploads/urun-yumurtali-kavurma-thumb.webp",
+          "imageFull": "/uploads/urun-yumurtali-kavurma-full.webp",
+          "tags": [],
+          "isHidden": false
+        },
+        {
+          "name": {
+            "tr": "Kavurma",
+            "en": "Kavurma (Braised Beef)",
+            "ar": "كاورما لحم بقري",
+            "ru": "Кавурма (тушёная говядина)"
+          },
+          "description": {
+            "tr": "Dana etinden hazırlanan kavurma, kendi yağıyla tavada ısıtılır. Yumuşak dokulu, lezzeti yoğundur.",
+            "en": "Beef kavurma warmed in its own fat; tender and rich.",
+            "ar": "",
+            "ru": ""
+          },
+          "ingredients": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "basePrice": 65000,
+          "imageThumb": "/uploads/urun-kavurma-thumb.webp",
+          "imageFull": "/uploads/urun-kavurma-full.webp",
+          "tags": [],
+          "isHidden": false
+        },
+        {
+          "name": {
+            "tr": "Omlet",
+            "en": "Omelette",
+            "ar": "أومليت",
+            "ru": "Омлет"
+          },
+          "description": {
+            "tr": "Taze yumurtalarla hazırlanır, tavada yumuşak kıvamda pişirilir. Sade, hafif ve her öğüne uygun klasik.",
+            "en": "Fresh eggs cooked soft in the pan.",
+            "ar": "",
+            "ru": ""
+          },
+          "ingredients": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "basePrice": 19500,
+          "imageThumb": "",
+          "imageFull": "",
+          "tags": [
+            "vegetarian"
+          ],
+          "isHidden": false
+        }
+      ]
+    },
+    {
+      "slug": "izgara-cesitleri",
+      "name": {
+        "tr": "Izgara Çeşitleri",
+        "en": "From the Grill",
+        "ar": "المشاوي",
+        "ru": "Гриль"
+      },
+      "timeStart": "",
+      "timeEnd": "",
+      "products": [
+        {
+          "name": {
+            "tr": "Köfte",
+            "en": "Grilled Meatballs",
+            "ar": "كفتة مشوية",
+            "ru": "Котлеты на гриле"
+          },
+          "description": {
+            "tr": "Dana etinden hazırlanan köfteler ızgarada pişirilir. Dışı mühürlü, içi sulu.",
+            "en": "Beef meatballs grilled; seared outside, juicy inside.",
+            "ar": "",
+            "ru": ""
+          },
+          "ingredients": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "basePrice": 60000,
+          "imageThumb": "/uploads/urun-kofte-thumb.webp",
+          "imageFull": "/uploads/urun-kofte-full.webp",
+          "tags": [],
+          "isHidden": false
+        },
+        {
+          "name": {
+            "tr": "Tavuk Şiş",
+            "en": "Chicken Skewer",
+            "ar": "شيش دجاج",
+            "ru": "Куриный шиш"
+          },
+          "description": {
+            "tr": "Marine edilmiş tavuk parçaları şişe dizilir, ızgarada sulu kalacak şekilde pişirilir. Hafif, dengeli ve her zaman iş yapan bir tercih.",
+            "en": "Marinated chicken pieces grilled on skewers, kept juicy.",
+            "ar": "",
+            "ru": ""
+          },
+          "ingredients": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "basePrice": 55000,
+          "imageThumb": "/uploads/urun-tavuk-is-thumb.webp",
+          "imageFull": "/uploads/urun-tavuk-is-full.webp",
+          "tags": [],
+          "isHidden": false
+        },
+        {
+          "name": {
+            "tr": "Tavuk Biftek",
+            "en": "Grilled Chicken Steak",
+            "ar": "ستيك دجاج",
+            "ru": "Куриный стейк"
+          },
+          "description": {
+            "tr": "Özenle marine edilmiş tavuk göğsü, ızgarada kurutmadan pişirilir. Yumuşak dokulu, hafif ve doyurucu.",
+            "en": "Carefully marinated chicken breast, grilled without drying.",
+            "ar": "",
+            "ru": ""
+          },
+          "ingredients": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "basePrice": 55000,
+          "imageThumb": "/uploads/urun-tavuk-biftek-thumb.webp",
+          "imageFull": "/uploads/urun-tavuk-biftek-full.webp",
+          "tags": [],
+          "isHidden": false
+        },
+        {
+          "name": {
+            "tr": "Tavuk Kanat",
+            "en": "Chicken Wings",
+            "ar": "أجنحة دجاج",
+            "ru": "Куриные крылья"
+          },
+          "description": {
+            "tr": "Marine edilmiş tavuk kanatlar ızgarada pişirilir. Dışı hafif çıtır, içi sulu.",
+            "en": "Marinated wings grilled; crisp outside, juicy inside.",
+            "ar": "",
+            "ru": ""
+          },
+          "ingredients": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "basePrice": 55000,
+          "imageThumb": "/uploads/urun-tavuk-kanat-thumb.webp",
+          "imageFull": "/uploads/urun-tavuk-kanat-full.webp",
+          "tags": [],
+          "isHidden": false
+        },
+        {
+          "name": {
+            "tr": "Sucuk Mangal",
+            "en": "Grilled Sucuk",
+            "ar": "سجق مشوي",
+            "ru": "Суджук на гриле"
+          },
+          "description": {
+            "tr": "Doğranmış sucuklar mangalda pişirilir. Dışı hafif çıtır, içi sulu kalır.",
+            "en": "Turkish sucuk grilled over charcoal; smoky and juicy.",
+            "ar": "",
+            "ru": ""
+          },
+          "ingredients": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "basePrice": 60000,
+          "imageThumb": "/uploads/urun-sucuk-mangal-thumb.webp",
+          "imageFull": "/uploads/urun-sucuk-mangal-full.webp",
+          "tags": [],
+          "isHidden": false
+        },
+        {
+          "name": {
+            "tr": "Kuzu Çoban Kavurma",
+            "en": "Lamb Çoban Kavurma",
+            "ar": "كاورما الراعي بلحم الضأن",
+            "ru": "Кавурма из баранины"
+          },
+          "description": {
+            "tr": "Kuzu eti, biber ve domatesle tavada hızlıca pişirilir. Eti yumuşak, lezzeti yoğundur.",
+            "en": "Lamb cooked quickly in the pan with pepper and tomato; tender and rich.",
+            "ar": "",
+            "ru": ""
+          },
+          "ingredients": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "basePrice": 95000,
+          "imageThumb": "/uploads/urun-kuzu-oban-kavurma-thumb.webp",
+          "imageFull": "/uploads/urun-kuzu-oban-kavurma-full.webp",
+          "tags": [],
+          "isHidden": false
+        },
+        {
+          "name": {
+            "tr": "Köfte Ekmek",
+            "en": "Meatball Sandwich",
+            "ar": "سندويش كفتة",
+            "ru": "Сэндвич с котлетой"
+          },
+          "description": {
+            "tr": "Izgarada pişirilen köfteler, taze ekmek arasında servis edilir. Pratik, doyurucu ve klasik sokak lezzeti.",
+            "en": "Grilled meatballs served in fresh bread.",
+            "ar": "",
+            "ru": ""
+          },
+          "ingredients": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "basePrice": 48000,
+          "imageThumb": "",
+          "imageFull": "",
+          "tags": [],
+          "isHidden": false
+        },
+        {
+          "name": {
+            "tr": "Sucuk Ekmek",
+            "en": "Sucuk Sandwich",
+            "ar": "سندويش سجق",
+            "ru": "Сэндвич с суджуком"
+          },
+          "description": {
+            "tr": "Mangalda veya ızgarada pişirilen sucuk, taze ekmekle servis edilir. Doyurucu, pratik ve net bir lezzet.",
+            "en": "Grilled Turkish sucuk served in fresh bread.",
+            "ar": "",
+            "ru": ""
+          },
+          "ingredients": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "basePrice": 48000,
+          "imageThumb": "",
+          "imageFull": "",
+          "tags": [],
+          "isHidden": false
+        },
+        {
+          "name": {
+            "tr": "İftar Menüsü",
+            "en": "Iftar Menu",
+            "ar": "قائمة الإفطار",
+            "ru": "Ифтар-меню"
+          },
+          "description": {
+            "tr": "Hurma, tulum peyniri ve pastırma; günün çorbası, mevsim salatası ve sıcak pide. Ana yemekte çoban kavurma, ızgara köfte veya tavuk; yanında pilav, tatlı, su ve sınırsız çay.",
+            "en": "Dates, tulum cheese and pastırma; soup of the day, seasonal salad and warm pide. Main course of çoban kavurma, grilled meatballs or chicken with rice, plus dessert, water and unlimited tea.",
+            "ar": "",
+            "ru": ""
+          },
+          "ingredients": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "basePrice": 95000,
+          "imageThumb": "/uploads/urun-iftar-menusu-thumb.webp",
+          "imageFull": "/uploads/urun-iftar-menusu-full.webp",
+          "tags": [
+            "dairy"
+          ],
+          "isHidden": false
+        },
+        {
+          "name": {
+            "tr": "Kuzu Pirzola",
+            "en": "Lamb Chops",
+            "ar": "ريش الضأن",
+            "ru": "Бараньи рёбрышки"
+          },
+          "description": {
+            "tr": "Özenle seçilmiş kuzu pirzolalar, ateşin lezzetiyle ızgarada buluşuyor.",
+            "en": "Carefully selected lamb chops grilled over fire.",
+            "ar": "",
+            "ru": ""
+          },
+          "ingredients": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "basePrice": 115000,
+          "imageThumb": "",
+          "imageFull": "",
+          "tags": [],
+          "isHidden": false
+        },
+        {
+          "name": {
+            "tr": "Kuzu Et",
+            "en": "Grilled Lamb",
+            "ar": "لحم ضأن مشوي",
+            "ru": "Баранина на гриле"
+          },
+          "description": {
+            "tr": "Lokum kıvamındaki kuzu eti, kendine özgü aroması ve zengin lezzetiyle.",
+            "en": "Meltingly tender lamb with its distinctive aroma and rich flavour.",
+            "ar": "",
+            "ru": ""
+          },
+          "ingredients": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "basePrice": 95000,
+          "imageThumb": "",
+          "imageFull": "",
+          "tags": [],
+          "isHidden": false
+        },
+        {
+          "name": {
+            "tr": "Hamburger",
+            "en": "Çam Burger 1880",
+            "ar": "برغر تشام ١٨٨٠",
+            "ru": "Чам Бургер 1880"
+          },
+          "description": {
+            "tr": "180 gram dana köfte, çift kat cheddar, tereyağlı susamlı ekmek, karamelize soğan, marul, domates, kornişon ve özel Çam Vadisi sosu.",
+            "en": "180 g beef patty, double cheddar, buttered sesame bun, caramelised onion, lettuce, tomato, gherkin and the house Çam Vadisi sauce.",
+            "ar": "",
+            "ru": ""
+          },
+          "ingredients": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "basePrice": 65000,
+          "imageThumb": "/uploads/urun-hamburger-thumb.webp",
+          "imageFull": "/uploads/urun-hamburger-full.webp",
+          "tags": [
+            "dairy"
+          ],
+          "isHidden": false
+        },
+        {
+          "name": {
+            "tr": "Antrikot",
+            "en": "Ribeye Steak",
+            "ar": "ستيك أنتركوت",
+            "ru": "Антрекот"
+          },
+          "description": {
+            "tr": "Usta dokunuşuyla ızgarada pişirilen seçkin dana antrikot.",
+            "en": "Select beef ribeye, grilled with a skilled hand.",
+            "ar": "",
+            "ru": ""
+          },
+          "ingredients": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "basePrice": 100000,
+          "imageThumb": "",
+          "imageFull": "",
+          "tags": [],
+          "isHidden": false
+        }
+      ]
+    },
+    {
+      "slug": "deniz-urunleri",
+      "name": {
+        "tr": "Deniz Ürünleri",
+        "en": "Seafood",
+        "ar": "المأكولات البحرية",
+        "ru": "Морепродукты"
+      },
+      "timeStart": "",
+      "timeEnd": "",
+      "products": [
+        {
+          "name": {
+            "tr": "Deniz Levreği",
+            "en": "Wild Sea Bass",
+            "ar": "قاروص بحري",
+            "ru": "Морской сибас"
+          },
+          "description": {
+            "tr": "Günlük taze deniz levreği, zeytinyağı ve doğal baharatlarla hazırlanır. Izgarada veya tavada, etini kurutmadan pişirilir.",
+            "en": "Daily fresh wild sea bass with olive oil and natural spices, cooked without drying.",
+            "ar": "",
+            "ru": ""
+          },
+          "ingredients": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "basePrice": 195000,
+          "imageThumb": "/uploads/urun-deniz-levregi-thumb.webp",
+          "imageFull": "/uploads/urun-deniz-levregi-full.webp",
+          "tags": [],
+          "isHidden": false
+        },
+        {
+          "name": {
+            "tr": "Çipura",
+            "en": "Sea Bream",
+            "ar": "دنيس",
+            "ru": "Дорада"
+          },
+          "description": {
+            "tr": "Günlük taze çipura, zeytinyağı ve deniz tuzuyla hazırlanır. Izgarada, kendi suyunu kaybetmeden pişirilir.",
+            "en": "Daily fresh sea bream grilled with olive oil and sea salt; firm flesh, clean aroma.",
+            "ar": "",
+            "ru": ""
+          },
+          "ingredients": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "basePrice": 70000,
+          "imageThumb": "/uploads/urun-ipura-thumb.webp",
+          "imageFull": "/uploads/urun-ipura-full.webp",
+          "tags": [],
+          "isHidden": false
+        },
+        {
+          "name": {
+            "tr": "Levrek",
+            "en": "Sea Bass",
+            "ar": "قاروص",
+            "ru": "Сибас"
+          },
+          "description": {
+            "tr": "Günlük taze levrek, zeytinyağı ve doğal baharatlarla hazırlanır. Izgarada etini kurutmadan, lezzetini bozmadan pişirilir.",
+            "en": "Daily fresh sea bass grilled with olive oil and natural spices.",
+            "ar": "",
+            "ru": ""
+          },
+          "ingredients": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "basePrice": 65000,
+          "imageThumb": "",
+          "imageFull": "",
+          "tags": [],
+          "isHidden": false
+        },
+        {
+          "name": {
+            "tr": "Palamut",
+            "en": "Bonito",
+            "ar": "بالاميدا",
+            "ru": "Пеламида"
+          },
+          "description": {
+            "tr": "Mevsiminde taze palamut, ızgarada veya tavada sade şekilde pişirilir. Eti dolgun, lezzeti yoğundur.",
+            "en": "Seasonal fresh bonito, grilled or pan-cooked; full flesh, intense flavour.",
+            "ar": "",
+            "ru": ""
+          },
+          "ingredients": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "basePrice": 78000,
+          "imageThumb": "/uploads/urun-palamut-thumb.webp",
+          "imageFull": "/uploads/urun-palamut-full.webp",
+          "tags": [],
+          "isHidden": false
+        },
+        {
+          "name": {
+            "tr": "Mezgit",
+            "en": "Whiting",
+            "ar": "سمك النازلي",
+            "ru": "Мерланг"
+          },
+          "description": {
+            "tr": "Günlük taze mezgit, mısır unuyla hafifçe kaplanıp çıtır kızartılır.",
+            "en": "Daily fresh whiting lightly coated in cornmeal and fried crisp.",
+            "ar": "",
+            "ru": ""
+          },
+          "ingredients": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "basePrice": null,
+          "imageThumb": "/uploads/urun-mezgit-thumb.webp",
+          "imageFull": "/uploads/urun-mezgit-full.webp",
+          "tags": [],
+          "isHidden": true
+        },
+        {
+          "name": {
+            "tr": "Tekir",
+            "en": "Red Mullet",
+            "ar": "سمك السلطان إبراهيم",
+            "ru": "Барабулька"
+          },
+          "description": {
+            "tr": "Günlük taze tekir, hafifçe unlanarak kızgın yağda çıtırlaştırılır.",
+            "en": "Daily fresh red mullet lightly floured and fried crisp.",
+            "ar": "",
+            "ru": ""
+          },
+          "ingredients": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "basePrice": 78000,
+          "imageThumb": "/uploads/urun-tekir-thumb.webp",
+          "imageFull": "/uploads/urun-tekir-full.webp",
+          "tags": [],
+          "isHidden": false
+        },
+        {
+          "name": {
+            "tr": "Çinekop",
+            "en": "Young Bluefish",
+            "ar": "سمك اللوفر الصغير",
+            "ru": "Молодая луфарь"
+          },
+          "description": {
+            "tr": "Günlük taze çinekop, mısır unu ile hafifçe kaplanarak kızgın yağda çıtır kızartılır. Dışı kıtır, içi sulu kalır.",
+            "en": "Daily fresh young bluefish lightly coated in cornmeal and fried crisp.",
+            "ar": "",
+            "ru": ""
+          },
+          "ingredients": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "basePrice": null,
+          "imageThumb": "",
+          "imageFull": "",
+          "tags": [],
+          "isHidden": true
+        },
+        {
+          "name": {
+            "tr": "Balık Ekmek",
+            "en": "Fish Sandwich",
+            "ar": "سندويش سمك",
+            "ru": "Сэндвич с рыбой"
+          },
+          "description": {
+            "tr": "Günlük taze balık, ızgarada pişirilir; taze ekmek, yeşillik ve limonla servis edilir. Sokak lezzeti tadında, net ve doyurucu.",
+            "en": "Daily fresh fish grilled and served in fresh bread with greens and lemon.",
+            "ar": "",
+            "ru": ""
+          },
+          "ingredients": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "basePrice": 38000,
+          "imageThumb": "/uploads/urun-balik-ekmek-thumb.webp",
+          "imageFull": "/uploads/urun-balik-ekmek-full.webp",
+          "tags": [],
+          "isHidden": false
+        },
+        {
+          "name": {
+            "tr": "Kalamar",
+            "en": "Crispy Calamari",
+            "ar": "كالاماري مقرمش",
+            "ru": "Хрустящие кальмары"
+          },
+          "description": {
+            "tr": "Taze kalamar, özel terbiyesinden sonra çıtır olacak şekilde kızartılır. Dışı altın renkli, içi yumuşaktır.",
+            "en": "Fresh calamari marinated then fried crisp, served with sauce.",
+            "ar": "",
+            "ru": ""
+          },
+          "ingredients": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "basePrice": 65000,
+          "imageThumb": "/uploads/urun-kalamar-thumb.webp",
+          "imageFull": "/uploads/urun-kalamar-full.webp",
+          "tags": [],
+          "isHidden": false
+        },
+        {
+          "name": {
+            "tr": "İskorpit Güveç",
+            "en": "Scorpionfish Casserole",
+            "ar": "طاجن سمك العقرب",
+            "ru": "Скорпена в горшочке"
+          },
+          "description": {
+            "tr": "Taze iskorpit, sebzeler ve zeytinyağıyla fırında ağır ağır pişirilir.",
+            "en": "Fresh scorpionfish baked slowly with vegetables and olive oil.",
+            "ar": "",
+            "ru": ""
+          },
+          "ingredients": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "basePrice": 65000,
+          "imageThumb": "",
+          "imageFull": "",
+          "tags": [],
+          "isHidden": false
+        },
+        {
+          "name": {
+            "tr": "İstavrit Tava",
+            "en": "Pan-Fried Horse Mackerel",
+            "ar": "إسطرلي مقلي",
+            "ru": "Ставрида на сковороде"
+          },
+          "description": {
+            "tr": "Günlük taze istavrit, mısır unu ile hafifçe kaplanarak kızgın yağda çıtır kızartılır. Dışı kıtır, içi sulu kalır.",
+            "en": "Daily fresh horse mackerel lightly coated in cornmeal and fried crisp.",
+            "ar": "",
+            "ru": ""
+          },
+          "ingredients": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "basePrice": 45500,
+          "imageThumb": "",
+          "imageFull": "",
+          "tags": [],
+          "isHidden": false
+        },
+        {
+          "name": {
+            "tr": "Barbun",
+            "en": "Red Mullet (Barbun)",
+            "ar": "بربون",
+            "ru": "Барбун"
+          },
+          "description": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "ingredients": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "basePrice": 100000,
+          "imageThumb": "",
+          "imageFull": "",
+          "tags": [],
+          "isHidden": false
+        }
+      ]
+    },
+    {
+      "slug": "saglikli-kaseler",
+      "name": {
+        "tr": "Sağlıklı Kaseler",
+        "en": "Healthy Bowls",
+        "ar": "أطباق صحية",
+        "ru": "Здоровые боулы"
+      },
+      "timeStart": "",
+      "timeEnd": "",
+      "products": [
+        {
+          "name": {
+            "tr": "Çam Kasesi",
+            "en": "Pine Bowl",
+            "ar": "بولة الصنوبر",
+            "ru": "Боул «Чам»"
+          },
+          "description": {
+            "tr": "Süzme yoğurt, yulaf ezmesi, orman meyveleri, bal veya hurma özü, ceviz ve badem.",
+            "en": "Strained yoghurt, oats, forest berries, honey or date syrup, walnut and almond.",
+            "ar": "",
+            "ru": ""
+          },
+          "ingredients": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "basePrice": 45000,
+          "imageThumb": "/uploads/urun-am-kasesi-thumb.webp",
+          "imageFull": "/uploads/urun-am-kasesi-full.webp",
+          "tags": [
+            "vegetarian",
+            "dairy",
+            "nuts"
+          ],
+          "isHidden": false
+        },
+        {
+          "name": {
+            "tr": "Orman Gücü Kasesi",
+            "en": "Forest Power Bowl",
+            "ar": "بولة قوة الغابة",
+            "ru": "Боул «Сила леса»"
+          },
+          "description": {
+            "tr": "Laktozsuz yoğurt, gece bekletilmiş yulaf, orman meyveleri, chia ve keten tohumu.",
+            "en": "Lactose-free yoghurt, overnight oats, forest berries, chia and flax seeds.",
+            "ar": "",
+            "ru": ""
+          },
+          "ingredients": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "basePrice": 52000,
+          "imageThumb": "/uploads/urun-orman-gucu-kasesi-thumb.webp",
+          "imageFull": "/uploads/urun-orman-gucu-kasesi-full.webp",
+          "tags": [
+            "vegetarian"
+          ],
+          "isHidden": false
+        },
+        {
+          "name": {
+            "tr": "Proteinli Çam Kasesi",
+            "en": "Protein Pine Bowl",
+            "ar": "بولة الصنوبر بالبروتين",
+            "ru": "Протеиновый боул"
+          },
+          "description": {
+            "tr": "Yoğurt, yulaf, muz, orman meyveleri ve şekersiz fıstık ezmesi; isteğe bağlı whey protein.",
+            "en": "Yoghurt, oats, banana, forest berries and sugar-free peanut butter; whey protein optional.",
+            "ar": "",
+            "ru": ""
+          },
+          "ingredients": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "basePrice": 59000,
+          "imageThumb": "/uploads/urun-proteinli-am-kasesi-thumb.webp",
+          "imageFull": "/uploads/urun-proteinli-am-kasesi-full.webp",
+          "tags": [
+            "vegetarian",
+            "dairy",
+            "nuts"
+          ],
+          "isHidden": false
+        },
+        {
+          "name": {
+            "tr": "Mini Çam Kasesi ( Çocuk )",
+            "en": "Mini Pine Bowl (Kids)",
+            "ar": "بولة صغيرة (للأطفال)",
+            "ru": "Мини-боул (детский)"
+          },
+          "description": {
+            "tr": "Yoğurt, az yulaf, çilek, muz ve bal.",
+            "en": "Yoghurt, a little oats, strawberry, banana and honey.",
+            "ar": "",
+            "ru": ""
+          },
+          "ingredients": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "basePrice": 39000,
+          "imageThumb": "/uploads/urun-mini-am-kasesi-ocuk-thumb.webp",
+          "imageFull": "/uploads/urun-mini-am-kasesi-ocuk-full.webp",
+          "tags": [
+            "vegetarian",
+            "dairy"
+          ],
+          "isHidden": false
+        }
+      ]
+    },
+    {
+      "slug": "tatlilar",
+      "name": {
+        "tr": "Tatlılar",
+        "en": "Desserts",
+        "ar": "الحلويات",
+        "ru": "Десерты"
+      },
+      "timeStart": "",
+      "timeEnd": "",
+      "products": [
+        {
+          "name": {
+            "tr": "Yaban Mersinli Cheesecake",
+            "en": "Blueberry Cheesecake",
+            "ar": "تشيز كيك بالبلوبيري",
+            "ru": "Чизкейк с голубикой"
+          },
+          "description": {
+            "tr": "Kremamsı cheesecake tabanı, yaban mersini sosunun hafif ekşi aromasıyla tamamlanır. Dengeli, ferah ve taze bir lezzet.",
+            "en": "Creamy cheesecake base finished with blueberry sauce.",
+            "ar": "",
+            "ru": ""
+          },
+          "ingredients": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "basePrice": 35000,
+          "imageThumb": "",
+          "imageFull": "",
+          "tags": [
+            "vegetarian",
+            "dairy"
+          ],
+          "isHidden": false
+        },
+        {
+          "name": {
+            "tr": "Waffle",
+            "en": "Belgian Waffle",
+            "ar": "وافل بلجيكي",
+            "ru": "Бельгийская вафля"
+          },
+          "description": {
+            "tr": "Dışı çıtır, içi yumuşak hamur; taze meyveler, eritilmiş çikolata ve çıtır parçalarla.",
+            "en": "Crisp outside, soft inside, with fresh fruit, melted chocolate and crunchy bits.",
+            "ar": "",
+            "ru": ""
+          },
+          "ingredients": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "basePrice": 55000,
+          "imageThumb": "",
+          "imageFull": "",
+          "tags": [
+            "vegetarian",
+            "dairy"
+          ],
+          "isHidden": false
+        },
+        {
+          "name": {
+            "tr": "Beyaz Çikolatalı Tatlı Bella",
+            "en": "White Chocolate Bella",
+            "ar": "بيلا بالشوكولاتة البيضاء",
+            "ru": "Белла с белым шоколадом"
+          },
+          "description": {
+            "tr": "Kremamsı dokuda tatlı, beyaz çikolata lezzetiyle hazırlanır. Yumuşak, dengeli ve hafif tatlı sevenlere uygun.",
+            "en": "Creamy dessert made with white chocolate.",
+            "ar": "",
+            "ru": ""
+          },
+          "ingredients": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "basePrice": 35000,
+          "imageThumb": "/uploads/urun-beyaz-ikolatali-tatli-bella-thumb.webp",
+          "imageFull": "/uploads/urun-beyaz-ikolatali-tatli-bella-full.webp",
+          "tags": [
+            "vegetarian",
+            "dairy"
+          ],
+          "isHidden": false
+        },
+        {
+          "name": {
+            "tr": "Siyah Çikolatalı Tatlı Bella",
+            "en": "Dark Chocolate Bella",
+            "ar": "بيلا بالشوكولاتة الداكنة",
+            "ru": "Белла с тёмным шоколадом"
+          },
+          "description": {
+            "tr": "Yoğun kakao aromalı siyah çikolata ile hazırlanır. Lezzeti derin, tatlılığı dengeli.",
+            "en": "Made with intense dark chocolate; deep flavour, balanced sweetness.",
+            "ar": "",
+            "ru": ""
+          },
+          "ingredients": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "basePrice": 32000,
+          "imageThumb": "",
+          "imageFull": "",
+          "tags": [
+            "vegetarian",
+            "dairy"
+          ],
+          "isHidden": false
+        },
+        {
+          "name": {
+            "tr": "Mozaik",
+            "en": "Mosaic Cake",
+            "ar": "كيك الموزاييك",
+            "ru": "Мозаичный торт"
+          },
+          "description": {
+            "tr": "Pasta Bisküvi ve kakao ile hazırlanan klasik mozaik pasta. Yoğun çikolata tadı, nostaljik lezzet.",
+            "en": "Classic biscuit and cocoa mosaic cake.",
+            "ar": "",
+            "ru": ""
+          },
+          "ingredients": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "basePrice": 35000,
+          "imageThumb": "/uploads/urun-mozaik-thumb.webp",
+          "imageFull": "/uploads/urun-mozaik-full.webp",
+          "tags": [
+            "vegetarian",
+            "dairy"
+          ],
+          "isHidden": false
+        },
+        {
+          "name": {
+            "tr": "Red Velvet",
+            "en": "Red Velvet",
+            "ar": "ريد فيلفيت",
+            "ru": "Красный бархат"
+          },
+          "description": {
+            "tr": "Yumuşak dokulu kırmızı kek, hafif krem peynirli krema ile hazırlanır. Dengeli tatlılık, zarif ve klasik bir lezzet.",
+            "en": "Soft red sponge with light cream cheese frosting.",
+            "ar": "",
+            "ru": ""
+          },
+          "ingredients": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "basePrice": 35000,
+          "imageThumb": "",
+          "imageFull": "",
+          "tags": [
+            "vegetarian",
+            "dairy"
+          ],
+          "isHidden": false
+        },
+        {
+          "name": {
+            "tr": "N Fıstıklım",
+            "en": "Pistachio Cream Cake",
+            "ar": "حلوى الفستق",
+            "ru": "Фисташковый десерт"
+          },
+          "description": {
+            "tr": "Antep fıstığı aromasıyla hazırlanan kremalı tatlı. Yoğun, dengeli ve fıstığı net hissettiren lezzet.",
+            "en": "Creamy dessert with Antep pistachio.",
+            "ar": "",
+            "ru": ""
+          },
+          "ingredients": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "basePrice": 35000,
+          "imageThumb": "",
+          "imageFull": "",
+          "tags": [
+            "vegetarian",
+            "dairy",
+            "nuts"
+          ],
+          "isHidden": false
+        },
+        {
+          "name": {
+            "tr": "N Ballım",
+            "en": "Honey Cream Cake",
+            "ar": "حلوى العسل",
+            "ru": "Медовый десерт"
+          },
+          "description": {
+            "tr": "Bal aromasıyla hazırlanan kremalı tatlı. Hafif tatlılığı, yumuşak dokusu ve dengeli lezzetiyle öne çıkar.",
+            "en": "Creamy dessert with honey aroma.",
+            "ar": "",
+            "ru": ""
+          },
+          "ingredients": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "basePrice": 35000,
+          "imageThumb": "",
+          "imageFull": "",
+          "tags": [
+            "vegetarian",
+            "dairy"
+          ],
+          "isHidden": false
+        },
+        {
+          "name": {
+            "tr": "Washington",
+            "en": "Washington Cake",
+            "ar": "كيك واشنطن",
+            "ru": "Торт «Вашингтон»"
+          },
+          "description": {
+            "tr": "Kremalı dokuda, çikolata ve fıstık uyumuyla hazırlanan klasik pasta. Yoğun lezzetli, dengeli tatlılıkta.",
+            "en": "Classic cream cake with chocolate and pistachio.",
+            "ar": "",
+            "ru": ""
+          },
+          "ingredients": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "basePrice": 35000,
+          "imageThumb": "/uploads/urun-washington-thumb.webp",
+          "imageFull": "/uploads/urun-washington-full.webp",
+          "tags": [
+            "vegetarian",
+            "dairy",
+            "nuts"
+          ],
+          "isHidden": false
+        },
+        {
+          "name": {
+            "tr": "Limonlu Cheesecake",
+            "en": "Lemon Cheesecake",
+            "ar": "تشيز كيك بالليمون",
+            "ru": "Лимонный чизкейк"
+          },
+          "description": {
+            "tr": "Kremamsı cheesecake tabanı, ferah limon aromasıyla tamamlanır. Dengeli tatlı-ekşi uyumu, hafif ve taze bir lezzet.",
+            "en": "Creamy cheesecake base with fresh lemon aroma.",
+            "ar": "",
+            "ru": ""
+          },
+          "ingredients": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "basePrice": 35000,
+          "imageThumb": "/uploads/urun-limonlu-cheesecake-thumb.webp",
+          "imageFull": "/uploads/urun-limonlu-cheesecake-full.webp",
+          "tags": [
+            "vegetarian",
+            "dairy"
+          ],
+          "isHidden": false
+        },
+        {
+          "name": {
+            "tr": "Çikolatalı Cheesecake",
+            "en": "Chocolate Cheesecake",
+            "ar": "تشيز كيك بالشوكولاتة",
+            "ru": "Шоколадный чизкейк"
+          },
+          "description": {
+            "tr": "Kremamsı cheesecake tabanı, yoğun çikolata sosuyla tamamlanır. Dengeli tatlılık, tok lezzet.",
+            "en": "Creamy cheesecake base with rich chocolate sauce.",
+            "ar": "",
+            "ru": ""
+          },
+          "ingredients": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "basePrice": 35000,
+          "imageThumb": "",
+          "imageFull": "",
+          "tags": [
+            "vegetarian",
+            "dairy"
+          ],
+          "isHidden": false
+        },
+        {
+          "name": {
+            "tr": "Frambuazlı Cheesecake",
+            "en": "Raspberry Cheesecake",
+            "ar": "تشيز كيك بالفرامبواز",
+            "ru": "Малиновый чизкейк"
+          },
+          "description": {
+            "tr": "Kremamsı cheesecake tabanı, frambuaz sosunun hafif ekşi dokunuşuyla tamamlanır. Dengeli, ferah ve taze bir lezzet.",
+            "en": "Creamy cheesecake base with a tart raspberry finish.",
+            "ar": "",
+            "ru": ""
+          },
+          "ingredients": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "basePrice": 35000,
+          "imageThumb": "/uploads/urun-frambuazli-cheesecake-thumb.webp",
+          "imageFull": "/uploads/urun-frambuazli-cheesecake-full.webp",
+          "tags": [
+            "vegetarian",
+            "dairy"
+          ],
+          "isHidden": false
+        },
+        {
+          "name": {
+            "tr": "Negro Oreo Cheesecake",
+            "en": "Oreo Cheesecake",
+            "ar": "تشيز كيك أوريو",
+            "ru": "Чизкейк «Орео»"
+          },
+          "description": {
+            "tr": "Kremamsı cheesecake tabanı, Oreo bisküvi ve yoğun çikolata dokunuşuyla hazırlanır. Tatlılığı dengeli, lezzeti net.",
+            "en": "Creamy cheesecake with Oreo biscuit and rich chocolate.",
+            "ar": "",
+            "ru": ""
+          },
+          "ingredients": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "basePrice": 35000,
+          "imageThumb": "",
+          "imageFull": "",
+          "tags": [
+            "vegetarian",
+            "dairy"
+          ],
+          "isHidden": false
+        },
+        {
+          "name": {
+            "tr": "N Aşkım",
+            "en": "Chocolate Cream Cake",
+            "ar": "حلوى الشوكولاتة الكريمية",
+            "ru": "Шоколадный крем-десерт"
+          },
+          "description": {
+            "tr": "Kremalı dokuda, çikolata ve özel aroma uyumuyla hazırlanan tatlı. Yoğun ama yormayan, akılda kalıcı lezzet.",
+            "en": "Creamy dessert with chocolate and a signature aroma.",
+            "ar": "",
+            "ru": ""
+          },
+          "ingredients": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "basePrice": 35000,
+          "imageThumb": "/uploads/urun-n-askim-thumb.webp",
+          "imageFull": "/uploads/urun-n-askim-full.webp",
+          "tags": [
+            "vegetarian",
+            "dairy"
+          ],
+          "isHidden": false
+        },
+        {
+          "name": {
+            "tr": "Kara Orman Meyveli Pasta",
+            "en": "Black Forest Cake",
+            "ar": "كيك الغابة السوداء",
+            "ru": "Торт «Чёрный лес»"
+          },
+          "description": {
+            "tr": "Çikolatalı kek katları, krema ve orman meyveleriyle hazırlanır. Tatlı-ekşi dengesi yerinde, klasik ve güçlü bir lezzet.",
+            "en": "Chocolate sponge layers with cream and forest berries.",
+            "ar": "",
+            "ru": ""
+          },
+          "ingredients": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "basePrice": 35000,
+          "imageThumb": "",
+          "imageFull": "",
+          "tags": [
+            "vegetarian",
+            "dairy"
+          ],
+          "isHidden": false
+        },
+        {
+          "name": {
+            "tr": "Orman Meyveli Pasta",
+            "en": "Forest Berry Cake",
+            "ar": "كيك فواكه الغابة",
+            "ru": "Торт с лесными ягодами"
+          },
+          "description": {
+            "tr": "Yumuşak kek katları, krema ve karışık orman meyveleriyle hazırlanır. Hafif ekşi dokunuşlu, ferah ve dengeli bir lezzet.",
+            "en": "Soft sponge layers with cream and mixed forest berries.",
+            "ar": "",
+            "ru": ""
+          },
+          "ingredients": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "basePrice": 35000,
+          "imageThumb": "",
+          "imageFull": "",
+          "tags": [
+            "vegetarian",
+            "dairy"
+          ],
+          "isHidden": false
+        },
+        {
+          "name": {
+            "tr": "Siyah Çikolatalı Profiterollü Mono Pasta",
+            "en": "Dark Chocolate Profiterole Cake",
+            "ar": "كيك بروفيترول بالشوكولاتة الداكنة",
+            "ru": "Профитроль-торт с тёмным шоколадом"
+          },
+          "description": {
+            "tr": "Yumuşak kek tabanı, profiterol parçaları ve yoğun siyah çikolata sosuyla hazırlanır.",
+            "en": "Soft sponge base with profiterole pieces and rich dark chocolate sauce.",
+            "ar": "",
+            "ru": ""
+          },
+          "ingredients": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "basePrice": 35000,
+          "imageThumb": "",
+          "imageFull": "",
+          "tags": [
+            "vegetarian",
+            "dairy"
+          ],
+          "isHidden": false
+        },
+        {
+          "name": {
+            "tr": "Beyaz Çikolatalı Profiterollü Mono Pasta",
+            "en": "White Chocolate Profiterole Cake",
+            "ar": "كيك بروفيترول بالشوكولاتة البيضاء",
+            "ru": "Профитроль-торт с белым шоколадом"
+          },
+          "description": {
+            "tr": "Yumuşak kek tabanı, profiterol parçaları ve beyaz çikolata sosuyla hazırlanır. Kremamsı dokulu, dengeli tatlılık.",
+            "en": "Soft sponge base with profiterole pieces and white chocolate sauce.",
+            "ar": "",
+            "ru": ""
+          },
+          "ingredients": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "basePrice": 35000,
+          "imageThumb": "",
+          "imageFull": "",
+          "tags": [
+            "vegetarian",
+            "dairy"
+          ],
+          "isHidden": false
+        },
+        {
+          "name": {
+            "tr": "Krokanlı Pasta",
+            "en": "Praline Crunch Cake",
+            "ar": "كيك بالكروكان",
+            "ru": "Торт с крокантом"
+          },
+          "description": {
+            "tr": "Karamelize krokan parçalarıyla hazırlanan pasta. Çıtır dokusu ve dengeli tatlılığıyla öne çıkar.",
+            "en": "Cake with caramelised praline pieces; crunchy and balanced.",
+            "ar": "",
+            "ru": ""
+          },
+          "ingredients": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "basePrice": 35000,
+          "imageThumb": "/uploads/urun-krokanli-pasta-thumb.webp",
+          "imageFull": "/uploads/urun-krokanli-pasta-full.webp",
+          "tags": [
+            "vegetarian",
+            "dairy",
+            "nuts"
+          ],
+          "isHidden": false
+        },
+        {
+          "name": {
+            "tr": "Tiramisu",
+            "en": "Tiramisu",
+            "ar": "تيراميسو",
+            "ru": "Тирамису"
+          },
+          "description": {
+            "tr": "Kahveyle ıslatılmış kek katları, mascarpone kremasıyla hazırlanır. Dengeli tatlılık, yumuşak ve klasik İtalyan lezzeti.",
+            "en": "Coffee-soaked sponge layers with mascarpone cream.",
+            "ar": "",
+            "ru": ""
+          },
+          "ingredients": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "basePrice": 35000,
+          "imageThumb": "/uploads/urun-tiramisu-thumb.webp",
+          "imageFull": "/uploads/urun-tiramisu-full.webp",
+          "tags": [
+            "vegetarian",
+            "dairy"
+          ],
+          "isHidden": false
+        },
+        {
+          "name": {
+            "tr": "N Snickerss",
+            "en": "Caramel Peanut Cake",
+            "ar": "حلوى الكراميل والفول السوداني",
+            "ru": "Карамельно-арахисовый десерт"
+          },
+          "description": {
+            "tr": "Karamel, yer fıstığı ve çikolata uyumuyla hazırlanan kremalı tatlı. Yoğun lezzetli, tatlı sevene net hitap eder.",
+            "en": "Creamy dessert with caramel, peanut and chocolate.",
+            "ar": "",
+            "ru": ""
+          },
+          "ingredients": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "basePrice": 35000,
+          "imageThumb": "",
+          "imageFull": "",
+          "tags": [
+            "vegetarian",
+            "dairy",
+            "nuts"
+          ],
+          "isHidden": false
+        },
+        {
+          "name": {
+            "tr": "Latte Mono",
+            "en": "Latte Mono Cake",
+            "ar": "كيك لاتيه",
+            "ru": "Латте-моно"
+          },
+          "description": {
+            "tr": "Latte aromalı kremalı mono pasta. Kahve tadını tatlıda arayanlar için.",
+            "en": "Latte-flavoured creamy mono cake.",
+            "ar": "",
+            "ru": ""
+          },
+          "ingredients": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "basePrice": 35000,
+          "imageThumb": "",
+          "imageFull": "",
+          "tags": [
+            "vegetarian",
+            "dairy"
+          ],
+          "isHidden": false
+        },
+        {
+          "name": {
+            "tr": "Orman Meyveli Cheesecake",
+            "en": "Forest Berry Cheesecake",
+            "ar": "تشيز كيك فواكه الغابة",
+            "ru": "Чизкейк с лесными ягодами"
+          },
+          "description": {
+            "tr": "Kremamsı cheesecake tabanı, karışık orman meyveleri sosuyla tamamlanır. Tatlı-ekşi dengesi yerinde, ferah ve taze bir lezzet.",
+            "en": "Creamy cheesecake base with mixed forest berry sauce.",
+            "ar": "",
+            "ru": ""
+          },
+          "ingredients": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "basePrice": 35000,
+          "imageThumb": "",
+          "imageFull": "",
+          "tags": [
+            "vegetarian",
+            "dairy"
+          ],
+          "isHidden": false
+        }
+      ]
+    },
+    {
+      "slug": "soguk-icecekler",
+      "name": {
+        "tr": "Soğuk İçecekler",
+        "en": "Cold Drinks",
+        "ar": "مشروبات باردة",
+        "ru": "Холодные напитки"
+      },
+      "timeStart": "",
+      "timeEnd": "",
+      "products": [
+        {
+          "name": {
+            "tr": "Meyve Suları",
+            "en": "Fruit Juices",
+            "ar": "عصائر فواكه",
+            "ru": "Соки"
+          },
+          "description": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "ingredients": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "basePrice": 15000,
+          "imageThumb": "/uploads/urun-meyve-sulari-thumb.webp",
+          "imageFull": "/uploads/urun-meyve-sulari-full.webp",
+          "tags": [
+            "vegetarian"
+          ],
+          "isHidden": false
+        },
+        {
+          "name": {
+            "tr": "Coca Cola",
+            "en": "Coca-Cola",
+            "ar": "كوكا كولا",
+            "ru": "Кока-Кола"
+          },
+          "description": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "ingredients": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "basePrice": 15000,
+          "imageThumb": "/uploads/urun-coca-cola-thumb.webp",
+          "imageFull": "/uploads/urun-coca-cola-full.webp",
+          "tags": [
+            "vegetarian"
+          ],
+          "isHidden": false
+        },
+        {
+          "name": {
+            "tr": "Soda",
+            "en": "Sparkling Water",
+            "ar": "مياه غازية",
+            "ru": "Газированная вода"
+          },
+          "description": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "ingredients": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "basePrice": 10000,
+          "imageThumb": "/uploads/urun-soda-thumb.webp",
+          "imageFull": "/uploads/urun-soda-full.webp",
+          "tags": [
+            "vegetarian"
+          ],
+          "isHidden": false
+        },
+        {
+          "name": {
+            "tr": "Ayran",
+            "en": "Ayran",
+            "ar": "عيران",
+            "ru": "Айран"
+          },
+          "description": {
+            "tr": "",
+            "en": "Chilled salted yoghurt drink.",
+            "ar": "",
+            "ru": ""
+          },
+          "ingredients": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "basePrice": 10000,
+          "imageThumb": "/uploads/urun-ayran-thumb.webp",
+          "imageFull": "/uploads/urun-ayran-full.webp",
+          "tags": [
+            "vegetarian",
+            "dairy"
+          ],
+          "isHidden": false
+        },
+        {
+          "name": {
+            "tr": "Limonata",
+            "en": "Homemade Lemonade",
+            "ar": "عصير ليمون منزلي",
+            "ru": "Домашний лимонад"
+          },
+          "description": {
+            "tr": "Bahçemizde yetişen taze naneler ve gerçek limonlarla hazırlanır.",
+            "en": "Made with real lemons and mint grown in our own garden.",
+            "ar": "",
+            "ru": ""
+          },
+          "ingredients": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "basePrice": 29500,
+          "imageThumb": "/uploads/urun-limonata-thumb.webp",
+          "imageFull": "/uploads/urun-limonata-full.webp",
+          "tags": [
+            "vegetarian"
+          ],
+          "isHidden": false
+        },
+        {
+          "name": {
+            "tr": "Sıkma Portakal",
+            "en": "Fresh Orange Juice",
+            "ar": "عصير برتقال طازج",
+            "ru": "Свежевыжатый апельсиновый сок"
+          },
+          "description": {
+            "tr": "",
+            "en": "Squeezed to order.",
+            "ar": "",
+            "ru": ""
+          },
+          "ingredients": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "basePrice": 35000,
+          "imageThumb": "/uploads/urun-sikma-portakal-thumb.webp",
+          "imageFull": "/uploads/urun-sikma-portakal-full.webp",
+          "tags": [
+            "vegetarian"
+          ],
+          "isHidden": false
+        },
+        {
+          "name": {
+            "tr": "Sprite",
+            "en": "Sprite",
+            "ar": "سبرايت",
+            "ru": "Спрайт"
+          },
+          "description": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "ingredients": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "basePrice": 15000,
+          "imageThumb": "/uploads/urun-sprite-thumb.webp",
+          "imageFull": "/uploads/urun-sprite-full.webp",
+          "tags": [
+            "vegetarian"
+          ],
+          "isHidden": false
+        },
+        {
+          "name": {
+            "tr": "Şalgam Suyu",
+            "en": "Turnip Juice",
+            "ar": "عصير اللفت",
+            "ru": "Шалгам"
+          },
+          "description": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "ingredients": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "basePrice": 15000,
+          "imageThumb": "/uploads/urun-algam-suyu-thumb.webp",
+          "imageFull": "/uploads/urun-algam-suyu-full.webp",
+          "tags": [
+            "vegetarian"
+          ],
+          "isHidden": false
+        },
+        {
+          "name": {
+            "tr": "Çırçır Gazoz",
+            "en": "Çırçır Soda",
+            "ar": "غازوز تشيرتشير",
+            "ru": "Лимонад «Чырчыр»"
+          },
+          "description": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "ingredients": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "basePrice": 15000,
+          "imageThumb": "",
+          "imageFull": "",
+          "tags": [
+            "vegetarian"
+          ],
+          "isHidden": false
+        },
+        {
+          "name": {
+            "tr": "Niğde Gazozu",
+            "en": "Niğde Soda",
+            "ar": "غازوز نيغده",
+            "ru": "Лимонад «Нигде»"
+          },
+          "description": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "ingredients": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "basePrice": 15000,
+          "imageThumb": "/uploads/urun-nigde-gazozu-thumb.webp",
+          "imageFull": "/uploads/urun-nigde-gazozu-full.webp",
+          "tags": [
+            "vegetarian"
+          ],
+          "isHidden": false
+        },
+        {
+          "name": {
+            "tr": "Fanta",
+            "en": "Fanta",
+            "ar": "فانتا",
+            "ru": "Фанта"
+          },
+          "description": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "ingredients": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "basePrice": 15000,
+          "imageThumb": "/uploads/urun-fanta-thumb.webp",
+          "imageFull": "/uploads/urun-fanta-full.webp",
+          "tags": [
+            "vegetarian"
+          ],
+          "isHidden": false
+        },
+        {
+          "name": {
+            "tr": "Fuse Tea",
+            "en": "Fuse Tea",
+            "ar": "فيوز تي",
+            "ru": "Fuse Tea"
+          },
+          "description": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "ingredients": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "basePrice": 15000,
+          "imageThumb": "/uploads/urun-fusetea-thumb.webp",
+          "imageFull": "/uploads/urun-fusetea-full.webp",
+          "tags": [
+            "vegetarian"
+          ],
+          "isHidden": false
+        },
+        {
+          "name": {
+            "tr": "Cam Şişe Su (33 cl)",
+            "en": "Glass Bottle Water (33 cl)",
+            "ar": "ماء زجاجة (٣٣ سل)",
+            "ru": "Вода в стекле (33 cl)"
+          },
+          "description": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "ingredients": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "basePrice": 10000,
+          "imageThumb": "/uploads/urun-cam-ise-su-33-ml-thumb.webp",
+          "imageFull": "/uploads/urun-cam-ise-su-33-ml-full.webp",
+          "tags": [
+            "vegetarian"
+          ],
+          "isHidden": false
+        }
+      ]
+    },
+    {
+      "slug": "sicak-icecekler",
+      "name": {
+        "tr": "Sıcak İçecekler",
+        "en": "Hot Drinks",
+        "ar": "مشروبات ساخنة",
+        "ru": "Горячие напитки"
+      },
+      "timeStart": "",
+      "timeEnd": "",
+      "products": [
+        {
+          "name": {
+            "tr": "Çay",
+            "en": "Tea",
+            "ar": "شاي",
+            "ru": "Чай"
+          },
+          "description": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "ingredients": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "basePrice": 6000,
+          "imageThumb": "",
+          "imageFull": "",
+          "tags": [
+            "vegetarian"
+          ],
+          "isHidden": false
+        },
+        {
+          "name": {
+            "tr": "Büyük Termos",
+            "en": "Large Tea Thermos",
+            "ar": "ترمس شاي كبير",
+            "ru": "Большой термос чая"
+          },
+          "description": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "ingredients": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "basePrice": 65000,
+          "imageThumb": "",
+          "imageFull": "",
+          "tags": [
+            "vegetarian"
+          ],
+          "isHidden": false
+        },
+        {
+          "name": {
+            "tr": "Küçük Termos",
+            "en": "Small Tea Thermos",
+            "ar": "ترمس شاي صغير",
+            "ru": "Малый термос чая"
+          },
+          "description": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "ingredients": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "basePrice": 50000,
+          "imageThumb": "",
+          "imageFull": "",
+          "tags": [
+            "vegetarian"
+          ],
+          "isHidden": false
+        },
+        {
+          "name": {
+            "tr": "Duble Türk Kahvesi",
+            "en": "Double Turkish Coffee",
+            "ar": "قهوة تركية مزدوجة",
+            "ru": "Двойной турецкий кофе"
+          },
+          "description": {
+            "tr": "Çift porsiyon Türk kahvesi. Köpüğü bol, aroması yoğun.",
+            "en": "Double portion of Turkish coffee; generous foam, intense aroma.",
+            "ar": "",
+            "ru": ""
+          },
+          "ingredients": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "basePrice": 28000,
+          "imageThumb": "",
+          "imageFull": "",
+          "tags": [
+            "vegetarian"
+          ],
+          "isHidden": false
+        },
+        {
+          "name": {
+            "tr": "Büyük Çay",
+            "en": "Large Tea",
+            "ar": "شاي كبير",
+            "ru": "Большой чай"
+          },
+          "description": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "ingredients": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "basePrice": 9000,
+          "imageThumb": "",
+          "imageFull": "",
+          "tags": [
+            "vegetarian"
+          ],
+          "isHidden": false
+        },
+        {
+          "name": {
+            "tr": "Fincan Çay",
+            "en": "Tea (Cup)",
+            "ar": "شاي فنجان",
+            "ru": "Чай в чашке"
+          },
+          "description": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "ingredients": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "basePrice": 9000,
+          "imageThumb": "",
+          "imageFull": "",
+          "tags": [
+            "vegetarian"
+          ],
+          "isHidden": false
+        }
+      ]
+    },
+    {
+      "slug": "sicak-kahveler",
+      "name": {
+        "tr": "Sıcak Kahveler",
+        "en": "Coffee",
+        "ar": "القهوة",
+        "ru": "Кофе"
+      },
+      "timeStart": "",
+      "timeEnd": "",
+      "products": [
+        {
+          "name": {
+            "tr": "Espresso",
+            "en": "Espresso",
+            "ar": "إسبريسو",
+            "ru": "Эспрессо"
+          },
+          "description": {
+            "tr": "İnce öğütülmüş çekirdeklerin yüksek basınçla demlenmesiyle hazırlanır; yoğun aroma, altın rengi krema.",
+            "en": "Finely ground beans brewed under high pressure; intense aroma with golden crema.",
+            "ar": "",
+            "ru": ""
+          },
+          "ingredients": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "basePrice": 23400,
+          "imageThumb": "/uploads/urun-espresso-thumb.webp",
+          "imageFull": "/uploads/urun-espresso-full.webp",
+          "tags": [
+            "vegetarian"
+          ],
+          "isHidden": false
+        },
+        {
+          "name": {
+            "tr": "Americano",
+            "en": "Americano",
+            "ar": "أمريكانو",
+            "ru": "Американо"
+          },
+          "description": {
+            "tr": "Espresso'nun sıcak suyla inceltilmiş hali; yumuşak içimli, uzun keyif.",
+            "en": "Espresso lengthened with hot water; smooth and long-lasting.",
+            "ar": "",
+            "ru": ""
+          },
+          "ingredients": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "basePrice": 25800,
+          "imageThumb": "/uploads/urun-cafe-americano-thumb.webp",
+          "imageFull": "/uploads/urun-cafe-americano-full.webp",
+          "tags": [
+            "vegetarian"
+          ],
+          "isHidden": false
+        },
+        {
+          "name": {
+            "tr": "Cappuccino",
+            "en": "Cappuccino",
+            "ar": "كابتشينو",
+            "ru": "Капучино"
+          },
+          "description": {
+            "tr": "Espresso üzerine buharda ısıtılmış süt ve yoğun süt köpüğü; üzeri kakao veya tarçınlı.",
+            "en": "Espresso with steamed milk and a thick milk foam, dusted with cocoa or cinnamon.",
+            "ar": "",
+            "ru": ""
+          },
+          "ingredients": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "basePrice": 26400,
+          "imageThumb": "/uploads/urun-cappuccino-thumb.webp",
+          "imageFull": "/uploads/urun-cappuccino-full.webp",
+          "tags": [
+            "vegetarian",
+            "dairy"
+          ],
+          "isHidden": false
+        },
+        {
+          "name": {
+            "tr": "Double Espresso",
+            "en": "Double Espresso",
+            "ar": "إسبريسو مزدوج",
+            "ru": "Двойной эспрессо"
+          },
+          "description": {
+            "tr": "Çift shot espresso; daha yoğun aroma ve güçlü gövde.",
+            "en": "Two shots of espresso; more intense aroma and fuller body.",
+            "ar": "",
+            "ru": ""
+          },
+          "ingredients": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "basePrice": 25800,
+          "imageThumb": "/uploads/urun-double-espresso-thumb.webp",
+          "imageFull": "/uploads/urun-double-espresso-full.webp",
+          "tags": [
+            "vegetarian"
+          ],
+          "isHidden": false
+        },
+        {
+          "name": {
+            "tr": "Latte",
+            "en": "Latte",
+            "ar": "لاتيه",
+            "ru": "Латте"
+          },
+          "description": {
+            "tr": "Yoğun espresso üzerine bolca buharda ısıtılmış süt ve ince süt köpüğü.",
+            "en": "Espresso with plenty of steamed milk and a thin layer of foam.",
+            "ar": "",
+            "ru": ""
+          },
+          "ingredients": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "basePrice": 35000,
+          "imageThumb": "/uploads/urun-latte-thumb.webp",
+          "imageFull": "/uploads/urun-latte-full.webp",
+          "tags": [
+            "vegetarian",
+            "dairy"
+          ],
+          "isHidden": false
+        },
+        {
+          "name": {
+            "tr": "Filtre Kahve",
+            "en": "Filter Coffee",
+            "ar": "قهوة مفلترة",
+            "ru": "Фильтр-кофе"
+          },
+          "description": {
+            "tr": "Klasik siyah kahve; dengeli gövde, sade ve net tat.",
+            "en": "Classic black coffee; balanced body, clean and straightforward.",
+            "ar": "",
+            "ru": ""
+          },
+          "ingredients": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "basePrice": 23400,
+          "imageThumb": "/uploads/urun-coffee-thumb.webp",
+          "imageFull": "/uploads/urun-coffee-full.webp",
+          "tags": [
+            "vegetarian"
+          ],
+          "isHidden": false
+        },
+        {
+          "name": {
+            "tr": "Sıcak Süt",
+            "en": "Hot Milk",
+            "ar": "حليب ساخن",
+            "ru": "Горячее молоко"
+          },
+          "description": {
+            "tr": "Buharda ısıtılarak hazırlanan, sade ve yumuşak içimli sıcak süt.",
+            "en": "Steamed milk; plain, soft and comforting.",
+            "ar": "",
+            "ru": ""
+          },
+          "ingredients": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "basePrice": 12500,
+          "imageThumb": "/uploads/urun-hot-milk-thumb.webp",
+          "imageFull": "/uploads/urun-hot-milk-full.webp",
+          "tags": [
+            "vegetarian",
+            "dairy"
+          ],
+          "isHidden": false
+        },
+        {
+          "name": {
+            "tr": "Türk Kahvesi",
+            "en": "Turkish Coffee",
+            "ar": "قهوة تركية",
+            "ru": "Турецкий кофе"
+          },
+          "description": {
+            "tr": "Taze çekilmiş kahve, köz tadında yavaşça pişirilir; köpüğü bol, yanında su ile servis edilir.",
+            "en": "Freshly ground coffee cooked slowly over embers; generous foam, served with water.",
+            "ar": "",
+            "ru": ""
+          },
+          "ingredients": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "basePrice": 19500,
+          "imageThumb": "/uploads/urun-turk-kahvesi-thumb.webp",
+          "imageFull": "/uploads/urun-turk-kahvesi-full.webp",
+          "tags": [
+            "vegetarian"
+          ],
+          "isHidden": false
+        },
+        {
+          "name": {
+            "tr": "Duble Türk Kahvesi",
+            "en": "Double Turkish Coffee",
+            "ar": "قهوة تركية مزدوجة",
+            "ru": "Двойной турецкий кофе"
+          },
+          "description": {
+            "tr": "Çift porsiyon Türk kahvesi. Köpüğü bol, aroması yoğun.",
+            "en": "Double portion of Turkish coffee; generous foam, intense aroma.",
+            "ar": "",
+            "ru": ""
+          },
+          "ingredients": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "basePrice": 28000,
+          "imageThumb": "/uploads/urun-double-kahve-thumb.webp",
+          "imageFull": "/uploads/urun-double-kahve-full.webp",
+          "tags": [
+            "vegetarian"
+          ],
+          "isHidden": false
+        }
+      ]
+    },
+    {
+      "slug": "bitki-cayi-menusu",
+      "name": {
+        "tr": "Bitki Çayı Menüsü",
+        "en": "Herbal Teas",
+        "ar": "أعشاب وشاي",
+        "ru": "Травяные чаи"
+      },
+      "timeStart": "",
+      "timeEnd": "",
+      "products": [
+        {
+          "name": {
+            "tr": "Adaçayı",
+            "en": "Sage Tea",
+            "ar": "شاي الميرمية",
+            "ru": "Чай из шалфея"
+          },
+          "description": {
+            "tr": "Temizleyici ve rahatlatıcıdır; boğazı yumuşatır, sindirimi destekler. Demleme 5 dakika, 200 gr.",
+            "en": "Cleansing and soothing; eases the throat and supports digestion. Brew 5 minutes, 200 g.",
+            "ar": "",
+            "ru": ""
+          },
+          "ingredients": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "basePrice": 15000,
+          "imageThumb": "/uploads/urun-adacayi-thumb.webp",
+          "imageFull": "/uploads/urun-adacayi-full.webp",
+          "tags": [
+            "vegetarian"
+          ],
+          "isHidden": false
+        },
+        {
+          "name": {
+            "tr": "Ihlamur",
+            "en": "Linden Tea",
+            "ar": "شاي الزيزفون",
+            "ru": "Липовый чай"
+          },
+          "description": {
+            "tr": "Ruhu ve bedeni yatıştırır, özellikle soğuk havalarda iyi gelir. Demleme 6 dakika, 200 gr.",
+            "en": "Calms body and mind, especially welcome in cold weather. Brew 6 minutes, 200 g.",
+            "ar": "",
+            "ru": ""
+          },
+          "ingredients": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "basePrice": 15000,
+          "imageThumb": "/uploads/urun-ihlamur-thumb.webp",
+          "imageFull": "/uploads/urun-ihlamur-full.webp",
+          "tags": [
+            "vegetarian"
+          ],
+          "isHidden": false
+        },
+        {
+          "name": {
+            "tr": "Papatya",
+            "en": "Chamomile Tea",
+            "ar": "شاي البابونج",
+            "ru": "Ромашковый чай"
+          },
+          "description": {
+            "tr": "Zihni dinginleştirir, uyku öncesi rahatlatıcı etkisiyle bilinir. Demleme 5 dakika, 200 gr.",
+            "en": "Quiets the mind; known for its calming effect before sleep. Brew 5 minutes, 200 g.",
+            "ar": "",
+            "ru": ""
+          },
+          "ingredients": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "basePrice": 15000,
+          "imageThumb": "/uploads/urun-papatya-thumb.webp",
+          "imageFull": "/uploads/urun-papatya-full.webp",
+          "tags": [
+            "vegetarian"
+          ],
+          "isHidden": false
+        },
+        {
+          "name": {
+            "tr": "Zencefil Bal Limon",
+            "en": "Ginger, Honey & Lemon",
+            "ar": "زنجبيل وعسل وليمون",
+            "ru": "Имбирь, мёд и лимон"
+          },
+          "description": {
+            "tr": "Bağışıklığı güçlendirir, soğuk algınlığına karşı koruyucudur. Demleme 7 dakika, 200 gr.",
+            "en": "Strengthens immunity and guards against colds. Brew 7 minutes, 200 g.",
+            "ar": "",
+            "ru": ""
+          },
+          "ingredients": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "basePrice": 15000,
+          "imageThumb": "/uploads/urun-zencefil-bal-limon-thumb.webp",
+          "imageFull": "/uploads/urun-zencefil-bal-limon-full.webp",
+          "tags": [
+            "vegetarian"
+          ],
+          "isHidden": false
+        },
+        {
+          "name": {
+            "tr": "Melisa Çayı",
+            "en": "Lemon Balm Tea",
+            "ar": "شاي المليسة",
+            "ru": "Чай с мелиссой"
+          },
+          "description": {
+            "tr": "Kaygıyı azaltır, kalbi sakinleştirir, zihni dengeye getirir. Demleme 6 dakika, 200 gr.",
+            "en": "Eases anxiety, calms the heart and settles the mind. Brew 6 minutes, 200 g.",
+            "ar": "",
+            "ru": ""
+          },
+          "ingredients": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "basePrice": 15000,
+          "imageThumb": "/uploads/urun-melisa-ayi-thumb.webp",
+          "imageFull": "/uploads/urun-melisa-ayi-full.webp",
+          "tags": [
+            "vegetarian"
+          ],
+          "isHidden": false
+        },
+        {
+          "name": {
+            "tr": "Kuşburnu",
+            "en": "Rosehip Tea",
+            "ar": "شاي الورد البلدي",
+            "ru": "Чай из шиповника"
+          },
+          "description": {
+            "tr": "C vitamini deposudur, enerjiyi yükseltir, cildi canlandırır. Demleme 7 dakika, 200 gr.",
+            "en": "Rich in vitamin C; lifts energy and revives the skin. Brew 7 minutes, 200 g.",
+            "ar": "",
+            "ru": ""
+          },
+          "ingredients": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "basePrice": 15000,
+          "imageThumb": "/uploads/urun-kusburnu-thumb.webp",
+          "imageFull": "/uploads/urun-kusburnu-full.webp",
+          "tags": [
+            "vegetarian"
+          ],
+          "isHidden": false
+        },
+        {
+          "name": {
+            "tr": "Kış Çayı",
+            "en": "Winter Tea",
+            "ar": "شاي الشتاء",
+            "ru": "Зимний чай"
+          },
+          "description": {
+            "tr": "Tarçın, karanfil, adaçayı, kuşburnu ve zencefilin birleşimi; vücudu ısıtır. Demleme 7 dakika, 200 gr.",
+            "en": "A blend of cinnamon, clove, sage, rosehip and ginger that warms the body. Brew 7 minutes, 200 g.",
+            "ar": "",
+            "ru": ""
+          },
+          "ingredients": {
+            "tr": "",
+            "en": "",
+            "ar": "",
+            "ru": ""
+          },
+          "basePrice": 15000,
+          "imageThumb": "/uploads/urun-kis-ayi-thumb.webp",
+          "imageFull": "/uploads/urun-kis-ayi-full.webp",
+          "tags": [
+            "vegetarian"
+          ],
+          "isHidden": false
+        }
+      ]
+    }
+  ]
+}

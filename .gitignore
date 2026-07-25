@@ -1,0 +1,25 @@
+# Kovan kurali: hicbir .md dosyasi GitHub'a gitmez (plan/not dosyalari yerelde kalir)
+*.md
+
+node_modules/
+dist/
+dist-ssr/
+
+# Sirlar - ADMIN_PASSWORD ve JWT_SECRET burada
+.env
+.env.*
+!.env.example
+
+# Veritabani tek gercek kaynaktir, depoda tutulmaz
+*.db
+*.db-shm
+*.db-wal
+CamVadisiDatabase/
+
+# Gecici calisma klasorleri
+_logo/
+_mockup/
+
+*.local
+.DS_Store
+Thumbs.db

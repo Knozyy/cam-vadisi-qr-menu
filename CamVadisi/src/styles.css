@@ -1,0 +1,131 @@
+@import 'tailwindcss';
+
+/* Cam & Recine paleti - Kovan renk-paletleri.md kaydi (2026-07-24).
+   Kontrastla dogrulanmis: kehribar asla metin degil; muted metin #3E4739 (9.1:1). */
+@theme {
+  --color-pine: #24402f;
+  --color-pine-700: #2e5140;
+  --color-resin: #c9762b;
+  --color-resin-ink: #1b211c; /* kehribar uzerindeki metin - beyaz okunmaz */
+  /* Marka altini: isletmenin logosundan. YALNIZCA marka ogelerinde (cam isareti,
+     marka adi) kullanilir - etkilesim rengi degildir, beyaz uzerinde 2.2:1 verir. */
+  --color-gold: #c9a227;
+  --color-sage: #e7eae1;
+  --color-surface: #ffffff;
+  --color-ink: #1b211c;
+  --color-muted: #3e4739; /* metin: 9.1:1 */
+  --color-muted-soft: #5a6459; /* yalnizca ikon ve hairline */
+  --color-line: rgba(36, 64, 47, 0.13);
+  --color-line-strong: rgba(36, 64, 47, 0.26);
+
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-sans: 'Instrument Sans', system-ui, sans-serif;
+  --font-arabic: 'IBM Plex Sans Arabic', system-ui, sans-serif;
+}
+
+html {
+  background: var(--color-sage);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Arapca secildiginde tum tipografi Arapca aileye gecer. */
+html[dir='rtl'] {
+  font-family: var(--font-arabic);
+}
+html[dir='rtl'] .font-display {
+  font-family: var(--font-arabic);
+}
+
+body {
+  margin: 0;
+  min-height: 100dvh;
+}
+
+/* Yapiskan sekmeler kaydirilirken kaydirma cubugu gorsel gurultu yapmasin. */
+.no-scrollbar {
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Dokunmatik kaydirmada ivme + sekmeye yaslanma */
+.snap-tabs {
+  scroll-snap-type: x proximity;
+}
+
+/* ==========================================================================
+   Kaydirma ile ortaya cikma - CSS scroll-driven animation.
+   JS gozlemci YOK: ana is parcacigini mesgul etmez, dusuk guclu telefonda da akici.
+   Desteklemeyen tarayicida ogeler dogrudan gorunur kalir (progressive enhancement).
+   ========================================================================== */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .reveal {
+      animation: reveal-in linear both;
+      animation-timeline: view();
+      /* Oge gorunur alanin alt %15'ine girdiginde baslar, %35'inde tamamlanir. */
+      animation-range: entry 5% cover 30%;
+    }
+  }
+}
+
+@keyframes reveal-in {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Baslik satir kirilmalarini dengele - tek kelime alt satira dusmesin. */
+.balance {
+  text-wrap: balance;
+}
+.pretty {
+  text-wrap: pretty;
+}
+
+/* Uzun menu listesi: ekran disindaki bolumleri tarayici hic yerlestirmesin.
+   139 urunle olcum yapildi - ilk boyama belirgin hizlaniyor. */
+.defer-paint {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 480px;
+}
+
+/* Sayfa gecisi (View Transitions API). Menu <-> ana sayfa gecisinde
+   ani sicrama yerine yumusak capraz gecis. */
+@view-transition {
+  navigation: auto;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
+    animation: none !important;
+  }
+}
+
+/* iOS'ta girisi buyutmesin diye 16px taban */
+input,
+button {
+  font-size: 16px;
+}
+
+/* Tarayicinin kendi arama temizleme dugmesi bizim X butonumuzla cakisiyordu. */
+input[type='search']::-webkit-search-cancel-button,
+input[type='search']::-webkit-search-decoration {
+  -webkit-appearance: none;
+  appearance: none;
+}

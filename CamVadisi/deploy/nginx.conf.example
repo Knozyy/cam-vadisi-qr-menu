@@ -1,0 +1,58 @@
+# Cam Vadisi Restorant - nginx yapilandirmasi
+# DOMAIN_BURAYA yerine gercek alan adini yazin (or. camvadisirestorant.com).
+# Sertifika icin certbot kullanilir: sudo certbot --nginx -d DOMAIN_BURAYA -d www.DOMAIN_BURAYA
+
+# Sikistirma: uygulama JS+CSS ~237 KB -> gzip ile ~75 KB. Zayif sebekede kritik.
+gzip on;
+gzip_types text/css application/javascript application/json image/svg+xml;
+gzip_min_length 512;
+
+server {
+    listen 80;
+    server_name DOMAIN_BURAYA www.DOMAIN_BURAYA;
+    # certbot bu blogu HTTPS'e yonlendirmek uzere gunceller.
+
+    # Misafir menusu (statik derleme)
+    root /var/www/cam-vadisi/menu;
+    index index.html;
+
+    # Yonetim paneli - AYNI ORIGIN altinda /panel (httpOnly cerez icin kritik)
+    location /panel/ {
+        alias /var/www/cam-vadisi/panel/;
+        try_files $uri $uri/ /panel/index.html;
+    }
+
+    # /admin ve /yonetim de akla yatkin tahminler - panele yonlendir.
+    location ~ ^/(admin|yonetim)/?$ {
+        return 301 /panel/;
+    }
+
+    # API ve yuklenen gorseller Node'a proxy'lenir
+    location /api/ {
+        proxy_pass http://127.0.0.1:3001;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        # Gorsel yukleme: buyuk foto icin govde sinirini yukselt
+        client_max_body_size 15m;
+    }
+
+    location /uploads/ {
+        proxy_pass http://127.0.0.1:3001;
+        proxy_set_header Host $host;
+        expires 30d;
+        add_header Cache-Control "public, immutable";
+    }
+
+    # SPA: "/" tanitim ana sayfasi, "/menu" menu (QR bunu kodlar).
+    # Her iki yol da index.html'e duser; yonlendirme istemcide History API ile.
+    location / {
+        try_files $uri $uri/ /index.html;
+    }
+
+    # Service worker onbelleklenmesin (guncelleme aninda gelsin)
+    location = /sw.js {
+        add_header Cache-Control "no-cache";
+    }
+}

@@ -1,0 +1,36 @@
+@import 'tailwindcss';
+
+/* Menuyle ayni Cam & Recine paleti - panel de ayni kimlikte hissetsin. */
+@theme {
+  --color-pine: #24402f;
+  --color-pine-700: #2e5140;
+  --color-resin: #c9762b;
+  --color-resin-ink: #1b211c;
+  --color-sage: #e7eae1;
+  --color-surface: #ffffff;
+  --color-ink: #1b211c;
+  --color-muted: #3e4739;
+  --color-muted-soft: #5a6459;
+  --color-line: rgba(36, 64, 47, 0.13);
+  --color-line-strong: rgba(36, 64, 47, 0.26);
+  --color-danger: #a13a2c;
+
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-sans: 'Instrument Sans', system-ui, sans-serif;
+}
+
+html {
+  background: var(--color-sage);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+body { margin: 0; min-height: 100dvh; }
+input, button, textarea, select { font-size: 15px; }
+
+.no-scrollbar { scrollbar-width: none; }
+.no-scrollbar::-webkit-scrollbar { display: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+}
