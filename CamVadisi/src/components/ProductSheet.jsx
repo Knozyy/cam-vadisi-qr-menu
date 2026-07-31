@@ -1,13 +1,20 @@
-import { useEffect, useState } from 'react';
-import { formatPrice } from '../../shared/price.js';
-import { useLang } from '../lib/LangContext.jsx';
-import { UI } from '../lib/ui-strings.js';
-import { ChevronIcon, HeartIcon } from './icons.jsx';
-import { Sheet } from './Sheet.jsx';
-import { TagBadges } from './TagBadges.jsx';
+import { useEffect, useState } from "react";
+import { formatPrice } from "../../shared/price.js";
+import { useLang } from "../lib/LangContext.jsx";
+import { UI } from "../lib/ui-strings.js";
+import { ChevronIcon } from "./icons.jsx";
+import { QuantityControl } from "./QuantityControl.jsx";
+import { Sheet } from "./Sheet.jsx";
+import { TagBadges } from "./TagBadges.jsx";
 
 /** Urun detayi: tam boy gorsel + varyantlar + rozetler + katlanir icindekiler. */
-export function ProductSheet({ product, isFav, onToggleFav, onClose }) {
+export function ProductSheet({
+  product,
+  quantity,
+  onIncrement,
+  onDecrement,
+  onClose,
+}) {
   const { t } = useLang();
   const [showIngredients, setShowIngredients] = useState(false);
 
@@ -20,16 +27,14 @@ export function ProductSheet({ product, isFav, onToggleFav, onClose }) {
   const description = t(product.description);
 
   const footer = (
-    <button
-      type="button"
-      onClick={() => onToggleFav(product.id)}
-      className={`flex h-12 w-full items-center justify-center gap-2 rounded-xl text-[15px] font-semibold ${
-        isFav ? 'bg-pine text-white' : 'border border-pine text-pine'
-      }`}
-    >
-      <HeartIcon filled={isFav} />
-      {isFav ? t(UI.removeFav) : t(UI.addFav)}
-    </button>
+    <QuantityControl
+      product={product}
+      quantity={quantity}
+      onIncrement={onIncrement}
+      onDecrement={onDecrement}
+      className="classic-quantity--sheet"
+      expandedLabel
+    />
   );
 
   return (
@@ -39,13 +44,17 @@ export function ProductSheet({ product, isFav, onToggleFav, onClose }) {
           <img
             src={product.imageFull}
             alt={t(product.name)}
-            className="mx-4 mt-3 h-48 w-[calc(100%-2rem)] rounded-xl bg-sage object-cover"
+            className="mx-4 mt-3 h-52 w-[calc(100%-2rem)] rounded-[6px_22px_6px_22px] bg-sage object-cover"
             loading="lazy"
             decoding="async"
           />
         )}
 
-        {description && <p className="px-4 pt-3 text-[14px] leading-relaxed text-muted">{description}</p>}
+        {description && (
+          <p className="px-4 pt-3 text-[14px] leading-relaxed text-muted">
+            {description}
+          </p>
+        )}
 
         {product.tags?.length > 0 && (
           <div className="px-4 pt-3.5">
@@ -97,11 +106,13 @@ export function ProductSheet({ product, isFav, onToggleFav, onClose }) {
             >
               {t(UI.ingredients)}
               <ChevronIcon
-                className={`ms-auto text-muted-soft transition-transform ${showIngredients ? 'rotate-180' : ''}`}
+                className={`ms-auto text-muted-soft transition-transform ${showIngredients ? "rotate-180" : ""}`}
               />
             </button>
             {showIngredients && (
-              <p className="pb-4 text-[14px] leading-relaxed text-muted">{ingredients}</p>
+              <p className="pb-4 text-[14px] leading-relaxed text-muted">
+                {ingredients}
+              </p>
             )}
           </div>
         )}

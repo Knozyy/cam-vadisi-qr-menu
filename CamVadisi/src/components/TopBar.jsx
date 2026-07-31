@@ -1,57 +1,65 @@
-import { useLang } from '../lib/LangContext.jsx';
-import { UI } from '../lib/ui-strings.js';
-import { ContourBand, HeartIcon } from './icons.jsx';
-import { LangStrip } from './LangStrip.jsx';
+import { Translate } from "@phosphor-icons/react";
+import { useState } from "react";
+import { useLang } from "../lib/LangContext.jsx";
+import { UI } from "../lib/ui-strings.js";
+import { LangStrip } from "./LangStrip.jsx";
 
 /**
- * Menu sayfasinin ust bari: logo banner + dil bayraklari + favori sayaci.
- *
- * Banner burada, footer'da DEGIL (kullanici karari): marka misafirin ilk gordugu sey
- * olmali. Bar YAPISKAN DEGIL - kaydirinca yukari kayip gider ve yalnizca arama +
- * kategori sekmeleri yapiskan kalir. Boylece ilk bakista marka guclu, menude
- * gezinirken ekran kompakt olur.
+ * Klasik katalog ust bari: marka, dil ve Listem davranislarini korur; eski genis
+ * banner yerine urunleri ilk ekrana tasiyan kompakt marka satiri kullanir.
  */
-export function TopBar({ restaurantName, favCount, onOpenFavorites, onOpenHome }) {
-  const { t } = useLang();
+export function TopBar({
+  restaurantName,
+  favCount,
+  onOpenFavorites,
+  onOpenHome,
+}) {
+  const { lang, t } = useLang();
+  const [showLanguages, setShowLanguages] = useState(false);
 
   return (
-    <header className="relative bg-pine px-3 pt-[calc(env(safe-area-inset-top)+10px)] pb-3 text-sage">
-      {/* Kontur yalnizca kendi katmaninda kirpilir. */}
-      <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        <ContourBand className="absolute inset-0 h-full w-full opacity-15" />
-      </div>
-
-      <button type="button" onClick={onOpenHome} className="relative block w-full" aria-label={t(UI.backHome)}>
-        <img
-          src="/logo-banner.webp"
-          srcSet="/logo-banner-sm.webp 640w, /logo-banner.webp 1200w"
-          sizes="(max-width: 448px) 100vw, 448px"
-          alt={restaurantName}
-          width="1200"
-          height="509"
-          /* Ilk ekranda gorunur: lazy DEGIL, aksi halde marka gec gelir. */
-          fetchPriority="high"
-          decoding="async"
-          className="w-full rounded-lg bg-pine"
-        />
+    <header className="classic-topbar">
+      <button
+        type="button"
+        onClick={onOpenHome}
+        className="classic-topbar-brand"
+        aria-label={t(UI.backHome)}
+      >
+        <img src="/icon-192.png" alt="" width="40" height="40" />
+        <span>
+          <strong>{restaurantName}</strong>
+          <small>{t(UI.restaurantLocationShort)}</small>
+        </span>
       </button>
 
-      <div className="relative mt-3 flex items-center gap-2">
-        <LangStrip className="flex-1" />
+      <div className="classic-topbar-actions">
+        <button
+          type="button"
+          onClick={() => setShowLanguages((open) => !open)}
+          className="classic-language-button"
+          aria-expanded={showLanguages}
+          aria-label="Dil seçimi"
+        >
+          <Translate size={18} weight="bold" aria-hidden="true" />
+          <span>{lang.toLocaleUpperCase("tr-TR")}</span>
+        </button>
+
         <button
           type="button"
           onClick={onOpenFavorites}
-          className="flex h-11 shrink-0 items-center gap-1.5 rounded-lg bg-white/12 px-3 text-[13px] font-semibold"
+          className="classic-topbar-list"
           aria-label={t(UI.myList)}
         >
-          <HeartIcon filled width={18} height={18} />
-          {favCount > 0 && (
-            <span className="grid h-[18px] min-w-[18px] place-items-center rounded-full bg-resin px-1 text-[11px] font-bold text-resin-ink">
-              {favCount}
-            </span>
-          )}
+          <span>{t(UI.myList)}</span>
+          <strong>{favCount}</strong>
         </button>
       </div>
+
+      {showLanguages && (
+        <div className="classic-language-popover">
+          <LangStrip tone="light" />
+        </div>
+      )}
     </header>
   );
 }

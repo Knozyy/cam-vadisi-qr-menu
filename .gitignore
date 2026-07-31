@@ -19,6 +19,7 @@ CamVadisiDatabase/
 # Gecici calisma klasorleri
 _logo/
 _mockup/
+.superdesign/tmp/
 
 *.local
 .DS_Store
