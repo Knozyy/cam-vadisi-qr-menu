@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
+import { pruneQuantities } from "./menu-list.js";
 
 const KEY = "cam-vadisi-listem-v2";
 
@@ -59,6 +60,14 @@ export function useMenuList() {
     });
   }, []);
 
+  /**
+   * Menude artik bulunmayan kimlikleri duser. Cagiran taraf menunun GERCEKTEN
+   * yuklendiginden emin olmali - bos liste ile cagrilirsa her sey silinir.
+   */
+  const prune = useCallback((validIds) => {
+    setQuantities((current) => pruneQuantities(current, validIds).quantities);
+  }, []);
+
   const clear = useCallback(() => setQuantities({}), []);
   const count = useMemo(
     () =>
@@ -77,6 +86,7 @@ export function useMenuList() {
     setQuantity,
     increment,
     decrement,
+    prune,
     clear,
   };
 }

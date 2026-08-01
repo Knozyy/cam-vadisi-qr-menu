@@ -12,8 +12,14 @@ export function QuantityControl({
 }) {
   const { t } = useLang();
   const name = t(product.name);
+  const soldOut = Boolean(product.isSoldOut);
 
-  if (product.isSoldOut) {
+  /*
+   * Tukenen urun listede DURUYORSA adet kontrolu gosterilmeye devam eder; yoksa
+   * misafir onu listeden hic cikaramaz (eksi dugmesi hic cizilmezdi) ama toplam
+   * fiyata dahil olmaya devam ederdi. Ekleme yonu kapali, cikarma yonu acik.
+   */
+  if (soldOut && quantity === 0) {
     return (
       <span className={`classic-sold-out ${className}`}>{t(UI.soldOut)}</span>
     );
@@ -35,8 +41,12 @@ export function QuantityControl({
 
   return (
     <div
-      className={`classic-quantity ${className}`}
-      aria-label={`${name}: ${quantity}`}
+      className={`classic-quantity ${soldOut ? "classic-quantity--sold-out" : ""} ${className}`}
+      aria-label={
+        soldOut
+          ? `${name}: ${quantity}, ${t(UI.soldOut)}`
+          : `${name}: ${quantity}`
+      }
     >
       <button
         type="button"
@@ -49,6 +59,7 @@ export function QuantityControl({
       <button
         type="button"
         onClick={() => onIncrement(product.id)}
+        disabled={soldOut}
         aria-label={`${name}: ${t(UI.increase)}`}
       >
         <Plus size={15} weight="bold" aria-hidden="true" />

@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import { AnnouncementBar } from "./components/AnnouncementBar.jsx";
 import { CategoryTabs } from "./components/CategoryTabs.jsx";
 import { ClassicProductRow } from "./components/ClassicProductRow.jsx";
+import { DietFilterBar } from "./components/DietFilterBar.jsx";
 import { MenuListBar } from "./components/MenuListBar.jsx";
 import { MenuListSheet } from "./components/MenuListSheet.jsx";
 import { ProductSheet } from "./components/ProductSheet.jsx";
@@ -10,6 +11,11 @@ import { TopBar } from "./components/TopBar.jsx";
 import { VenueFooter } from "./components/VenueFooter.jsx";
 import { useLang } from "./lib/LangContext.jsx";
 import { trackView } from "./lib/api.js";
+import {
+  availableFilterTags,
+  productPassesFilters,
+  toggleTag,
+} from "./lib/filters.js";
 import { menuListTotals } from "./lib/menu-list.js";
 import { productMatches } from "./lib/search.js";
 import { UI } from "./lib/ui-strings.js";
@@ -22,6 +28,9 @@ export function MenuPage({ menu, offline, jumpTo, onOpenHome }) {
   const [activeCategory, setActiveCategory] = useState("all");
   const [openProduct, setOpenProduct] = useState(null);
   const [showList, setShowList] = useState(false);
+  const [dietTags, setDietTags] = useState([]);
+  const [avoidTags, setAvoidTags] = useState([]);
+  const [showFilters, setShowFilters] = useState(false);
 
   const categories = menu.categories ?? [];
   const slugs = useMemo(
@@ -50,6 +59,11 @@ export function MenuPage({ menu, offline, jumpTo, onOpenHome }) {
     setActiveCategory(jumpTo);
   }, [jumpTo, slugs]);
 
+  const availableFilters = useMemo(
+    () => availableFilterTags(allProducts),
+    [allProducts],
+  );
+
   const visibleCategories = useMemo(() => {
     const categoryPool =
       activeCategory === "all"
@@ -59,12 +73,21 @@ export function MenuPage({ menu, offline, jumpTo, onOpenHome }) {
     return categoryPool
       .map((category) => ({
         ...category,
-        products: category.products.filter((product) =>
-          productMatches(product, query, lang),
+        products: category.products.filter(
+          (product) =>
+            productMatches(product, query, lang) &&
+            productPassesFilters(product, dietTags, avoidTags),
         ),
       }))
       .filter((category) => category.products.length > 0);
-  }, [activeCategory, categories, lang, query]);
+  }, [activeCategory, avoidTags, categories, dietTags, lang, query]);
+
+  const filtersActive = dietTags.length + avoidTags.length > 0;
+
+  function clearFilters() {
+    setDietTags([]);
+    setAvoidTags([]);
+  }
 
   const visibleCount = useMemo(
     () =>
@@ -84,6 +107,16 @@ export function MenuPage({ menu, offline, jumpTo, onOpenHome }) {
     () => menuListTotals(allProducts, menuList.quantities),
     [allProducts, menuList.quantities],
   );
+
+  /**
+   * Menuden kalkan urunleri listeden dus. Menu bos gelirse (cevrimdisi ya da
+   * API hatasi) DOKUNMA - yoksa misafirin listesi sebeke koptugu icin silinir.
+   */
+  const pruneList = menuList.prune;
+  useEffect(() => {
+    if (allProducts.length === 0) return;
+    pruneList(allProducts.map((product) => product.id));
+  }, [allProducts, pruneList]);
 
   function selectCategory(slug) {
     setActiveCategory(slug);
@@ -108,7 +141,7 @@ export function MenuPage({ menu, offline, jumpTo, onOpenHome }) {
     <div className="classic-menu-page mx-auto min-h-dvh max-w-md shadow-sm">
       <TopBar
         restaurantName={menu.settings?.restaurantName ?? "Çam Vadisi"}
-        favCount={menuList.count}
+        favCount={listTotals.count}
         onOpenFavorites={() => setShowList(true)}
         onOpenHome={onOpenHome}
       />
@@ -134,13 +167,25 @@ export function MenuPage({ menu, offline, jumpTo, onOpenHome }) {
           onSelect={selectCategory}
           includeAll
         />
+        <DietFilterBar
+          available={availableFilters}
+          dietTags={dietTags}
+          avoidTags={avoidTags}
+          open={showFilters}
+          onToggleOpen={() => setShowFilters((open) => !open)}
+          onToggleDiet={(tag) => setDietTags((tags) => toggleTag(tags, tag))}
+          onToggleAvoid={(tag) => setAvoidTags((tags) => toggleTag(tags, tag))}
+          onClear={clearFilters}
+        />
       </div>
 
-      <main
-        key={`${activeCategory}-${query}-${lang}`}
-        id="menu-catalog"
-        className="classic-menu-catalog"
-      >
+      {/*
+        key YALNIZCA kategoriye bagli: kategori degisimi bilincli bir gecis, giris
+        animasyonunu yeniden oynatmasi dogru. Aramayi ya da dili de keye koymak her
+        tus vurusunda 139 satirlik katalogu sokup yeniden kuruyor ve animasyonu
+        bastan oynatiyordu.
+      */}
+      <main key={activeCategory} id="menu-catalog" className="classic-menu-catalog">
         <div className="classic-result-meta">
           <strong>{activeLabel}</strong>
           <span>
@@ -150,8 +195,20 @@ export function MenuPage({ menu, offline, jumpTo, onOpenHome }) {
 
         {visibleCategories.length === 0 ? (
           <div className="classic-no-results">
-            <p>{t(UI.noResults)}</p>
-            <span>{t(UI.noResultsHint)}</span>
+            {/* Sonucu suzgec sildiyse "baska kelime deneyin" yanlis yonlendirir. */}
+            <p>{t(filtersActive ? UI.filtersNoMatch : UI.noResults)}</p>
+            <span>
+              {t(filtersActive ? UI.filtersNoMatchHint : UI.noResultsHint)}
+            </span>
+            {filtersActive && (
+              <button
+                type="button"
+                onClick={clearFilters}
+                className="classic-filter-reset"
+              >
+                {t(UI.filtersClear)}
+              </button>
+            )}
           </div>
         ) : (
           visibleCategories.map((category) => (

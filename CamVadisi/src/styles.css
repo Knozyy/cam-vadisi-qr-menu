@@ -322,6 +322,113 @@ input[type="search"]::-webkit-search-decoration {
   font-weight: 700;
 }
 
+/* Diyet ve alerjen suzgeci -------------------------------------------------- */
+
+.classic-filter {
+  border-top: 1px solid var(--color-line-strong);
+  background: #fffdf7;
+}
+
+.classic-filter-trigger {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  gap: 8px;
+  border: 0;
+  background: transparent;
+  padding: 11px 16px;
+  color: var(--color-pine);
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* Kehribar YALNIZCA etkin durumda - toplam alanin %3'unu asmasin. */
+.classic-filter-badge {
+  display: inline-grid;
+  min-width: 19px;
+  height: 19px;
+  place-items: center;
+  border-radius: 999px;
+  background: var(--color-resin);
+  color: var(--color-resin-ink);
+  padding: 0 5px;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.classic-filter-caret {
+  margin-inline-start: auto;
+  color: var(--color-muted);
+  transition: transform 180ms ease;
+}
+
+.classic-filter-caret.is-open {
+  transform: rotate(180deg);
+}
+
+.classic-filter-panel {
+  padding: 0 16px 13px;
+}
+
+.classic-filter-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.classic-filter-chip {
+  border: 1px solid var(--color-line-strong);
+  border-radius: 999px;
+  background: transparent;
+  padding: 7px 13px;
+  color: var(--color-muted);
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    background 160ms ease,
+    color 160ms ease,
+    border-color 160ms ease;
+}
+
+.classic-filter-chip.is-active {
+  border-color: var(--color-resin);
+  background: var(--color-resin);
+  color: var(--color-resin-ink);
+}
+
+.classic-filter-reset {
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  padding: 7px 11px;
+  color: var(--color-pine);
+  font-size: 12px;
+  font-weight: 700;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/*
+ * Etiketler mutfakca dogrulanmadi; uyari suzgecle AYNI ekranda durmali,
+ * yoksa suzgec bir garanti gibi okunur.
+ */
+.classic-filter-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  margin: 10px 0 0;
+  color: var(--color-muted);
+  font-size: 11px;
+  line-height: 1.45;
+}
+
+.classic-filter-note svg {
+  flex: 0 0 auto;
+  margin-top: 1px;
+}
+
 .classic-menu-catalog {
   min-height: 420px;
   padding: 18px 0 132px;
@@ -555,6 +662,27 @@ input[type="search"]::-webkit-search-decoration {
 
 .classic-quantity button:active {
   background: var(--color-sage);
+}
+
+/*
+ * Tukenen ama listede duran urun: cikarma acik kalir ki misafir listeden
+ * atabilsin, ekleme kapanir. Cerceve kehribar degil sessiz gri - kehribar
+ * yalnizca tiklanabilir/etkin yuzeylerin rengi.
+ */
+.classic-quantity--sold-out {
+  border-style: dashed;
+  border-color: var(--color-muted-soft);
+  background: var(--color-sage);
+}
+
+.classic-quantity button:disabled {
+  color: var(--color-muted);
+  cursor: not-allowed;
+  opacity: 0.45;
+}
+
+.classic-quantity button:disabled:active {
+  background: transparent;
 }
 
 .classic-quantity > span {

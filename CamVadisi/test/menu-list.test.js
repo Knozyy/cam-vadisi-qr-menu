@@ -1,6 +1,10 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { menuListTotals, selectionUnitPrice } from "../src/lib/menu-list.js";
+import {
+  menuListTotals,
+  pruneQuantities,
+  selectionUnitPrice,
+} from "../src/lib/menu-list.js";
 
 const products = [
   {
@@ -45,4 +49,38 @@ test("sifir ve gecersiz adetler toplama girmez", () => {
     total: 0,
     hasEstimate: false,
   });
+});
+
+test("menuden kalkan urun listeden dusuruluyor - HAYALET SAYAC hatasi", () => {
+  // 999999 menude yok: isletme gizlemis ya da silmis.
+  const { quantities, removed } = pruneQuantities(
+    { 1: 2, 999999: 3 },
+    [1, 2, 3],
+  );
+
+  assert.equal(removed, 1);
+  assert.deepEqual(quantities, { 1: 2 });
+});
+
+test("budama hicbir sey dusurmezse AYNI nesneyi doner", () => {
+  // Ayni referans donmezse state her menu yuklemesinde bosuna guncellenir.
+  const current = { 1: 2, 3: 1 };
+  const result = pruneQuantities(current, [1, 2, 3]);
+
+  assert.equal(result.removed, 0);
+  assert.equal(result.quantities, current);
+});
+
+test("budama metin ve sayi kimlikleri birlikte kabul eder", () => {
+  // Urun kimligi sayi, localStorage anahtari metindir.
+  const { removed } = pruneQuantities({ 1: 1 }, new Set(["1"]));
+  assert.equal(removed, 0);
+});
+
+test("tukenen urun listedeyse toplamda kalir - misafir cikarabilmeli", () => {
+  const soldOut = [{ id: 9, basePrice: 12000, variants: [], isSoldOut: true }];
+  const totals = menuListTotals(soldOut, { 9: 2 });
+
+  assert.equal(totals.count, 2);
+  assert.equal(totals.total, 24000);
 });

@@ -137,6 +137,67 @@ export const UI = {
     ru: "Все блюда",
   },
   products: { tr: "ürün", en: "items", ar: "منتج", ru: "позиций" },
+
+  /* Diyet ve alerjen suzgeci ------------------------------------------------ */
+  filters: {
+    tr: "Diyet ve alerjen",
+    en: "Diet & allergens",
+    ar: "الحمية والحساسية",
+    ru: "Диета и аллергены",
+  },
+  filtersClear: {
+    tr: "Temizle",
+    en: "Clear",
+    ar: "مسح",
+    ru: "Сбросить",
+  },
+  filtersOpen: {
+    tr: "Süzgeci aç",
+    en: "Open filters",
+    ar: "فتح عوامل التصفية",
+    ru: "Открыть фильтры",
+  },
+  /*
+   * Etiketler urun adindan turetildi, mutfak dogrulamadi. Suzgec bir garanti
+   * degil; bu uyari gorunmeden alerjen suzgeci gostermek yaniltici olur.
+   */
+  filtersDisclaimer: {
+    tr: "Etiketler bilgi amaçlıdır. Alerjiniz varsa lütfen personele danışın.",
+    en: "Labels are for guidance only. Please ask our staff about allergies.",
+    ar: "المعلومات إرشادية فقط. يرجى سؤال الموظفين بخصوص الحساسية.",
+    ru: "Информация справочная. При аллергии обратитесь к персоналу.",
+  },
+  filtersNoMatch: {
+    tr: "Bu süzgeçle ürün kalmadı",
+    en: "No dishes match these filters",
+    ar: "لا توجد أطباق تطابق هذه الفلاتر",
+    ru: "Нет блюд по этим фильтрам",
+  },
+  filtersNoMatchHint: {
+    tr: "Bir süzgeci kaldırıp tekrar deneyin.",
+    en: "Remove a filter and try again.",
+    ar: "أزل أحد الفلاتر وحاول مجددًا.",
+    ru: "Уберите фильтр и попробуйте снова.",
+  },
+  /* "Kacin" etiketlerinin OLUMSUZ bicimi - rozetteki "Sütlü" ile karismasin. */
+  withoutDairy: {
+    tr: "Sütsüz",
+    en: "Dairy-free",
+    ar: "خالٍ من الألبان",
+    ru: "Без молока",
+  },
+  withoutNuts: {
+    tr: "Kuruyemişsiz",
+    en: "Nut-free",
+    ar: "خالٍ من المكسرات",
+    ru: "Без орехов",
+  },
+  withoutSpicy: {
+    tr: "Acısız",
+    en: "Not spicy",
+    ar: "غير حار",
+    ru: "Без острого",
+  },
   menuIntroKicker: {
     tr: "Klasik restoran kataloğu",
     en: "Classic restaurant catalogue",
