@@ -1,36 +1,74 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import {
   ArrowDown,
   ArrowUp,
   ArrowUpRight,
   InstagramLogo,
-  List,
   MapPin,
-  X,
 } from '@phosphor-icons/react';
-import { PineMark } from './components/PineMark.jsx';
 import { useLang } from './lib/LangContext.jsx';
 import { trackView } from './lib/api.js';
 import './home.css';
 
 const LANG_ORDER = ['tr', 'en', 'ar', 'ru'];
 const INSTAGRAM_URL = 'https://www.instagram.com/cam.vadisi/';
+const DEFAULT_ADDRESS =
+  'Anadolu Kavağı Mahallesi, Feneryolu Caddesi, Çam Vadisi Cafe No:12, Beykoz / İstanbul';
+const DEFAULT_PHONES = ['+90 532 244 08 15', '+90 545 248 79 90'];
+const DEFAULT_LOCATION = [41.1776, 29.0959];
+
+const NAV_ITEMS = [
+  {
+    href: '#menu',
+    className: 'home-grove-nav__item--menu',
+    number: '01',
+    title: 'Menü',
+    description: 'Günlük tazelik, yerel lezzetler.',
+  },
+  {
+    href: '#hikaye',
+    className: 'home-grove-nav__item--story',
+    number: '02',
+    title: 'Hikâyemiz',
+    description: "1998'den beri aynı vadide.",
+  },
+  {
+    href: '#lezzetler',
+    className: 'home-grove-nav__item--flavours',
+    number: '03',
+    title: 'Lezzetler',
+    description: 'Günün öne çıkan sofraları.',
+  },
+  {
+    href: '#ulasim',
+    className: 'home-grove-nav__item--location',
+    number: '04',
+    title: 'Ulaşım',
+    description: 'Boğaz yolunun en yeşil durağı.',
+  },
+];
 
 const CATEGORY_SPECS = [
   {
     slug: 'kahvalti-cesitleri',
     image: '/uploads/urun-bal-kaymak-full.webp',
     fallbackTitle: 'Kahvaltı Çeşitleri',
+    copy: 'Günlük tazelik, yerel lezzetler.',
+    modifier: 'cv-menu-band--kahvalti',
   },
   {
     slug: 'ara-sicaklar',
     image: '/uploads/urun-sahanda-yumurta-2-full.webp',
     fallbackTitle: 'Ara Sıcaklar',
+    copy: 'Uzun sofralara mutfaktan sıcak bir başlangıç.',
+    modifier: 'cv-menu-band--sicak cv-menu-band--reverse',
   },
   {
     slug: 'deniz-urunleri',
     image: '/uploads/urun-deniz-levregi-full.webp',
     fallbackTitle: 'Deniz Ürünleri',
+    copy: 'Izgarada sade pişirim, mevsim yeşillikleri ve limon.',
+    modifier: 'cv-menu-band--deniz',
   },
 ];
 
@@ -65,41 +103,97 @@ function normalize(value) {
 
 function formatPhone(raw) {
   const digits = String(raw).replace(/\D/g, '');
-  const national = digits.length === 10 ? `0${digits}` : digits;
+  const national = digits.length === 10 ? '0' + digits : digits;
   if (national.length !== 11) return raw;
-  return `${national.slice(0, 4)} ${national.slice(4, 7)} ${national.slice(7, 9)} ${national.slice(9)}`;
+  return (
+    national.slice(0, 4) +
+    ' ' +
+    national.slice(4, 7) +
+    ' ' +
+    national.slice(7, 9) +
+    ' ' +
+    national.slice(9)
+  );
 }
 
-function Brand({ compact = false, restaurantName = 'Çam Vadisi' }) {
+function phoneHref(raw) {
+  const digits = String(raw ?? '').replace(/\D/g, '');
+
+  if (digits.length === 10) return 'tel:+90' + digits;
+  if (digits.length === 11 && digits.startsWith('0')) return 'tel:+90' + digits.slice(1);
+  if (digits.length === 12 && digits.startsWith('90')) return 'tel:+' + digits;
+  return 'tel:' + (String(raw ?? '').trim().startsWith('+') ? '+' : '') + digits;
+}
+
+function formatHours(hours) {
+  const rows = Array.isArray(hours)
+    ? hours.filter((row) => row?.open && row?.close)
+    : [];
+
+  if (rows.length === 0) return 'Her gün 08:00 — 23:00';
+
+  return rows
+    .map((row) => {
+      const day = row.day ? row.day + ' ' : '';
+      return day + row.open + ' — ' + row.close;
+    })
+    .join(' · ');
+}
+
+function formatCoordinate(value, positive, negative) {
+  const number = Number(value);
+  const direction = number >= 0 ? positive : negative;
+  return Math.abs(number).toFixed(4) + '° ' + direction;
+}
+
+function stripTrailingVariantLabel(value) {
+  return String(value ?? '').replace(/\s*\([^)]*\)\s*$/, '').trim();
+}
+
+function SplitTitle({ children }) {
+  const words = String(children ?? '').trim().split(/\s+/).filter(Boolean);
+  if (words.length < 2) return children;
+  const splitAt = Math.ceil(words.length / 2);
   return (
-    <span className={`home-brand${compact ? ' home-brand--compact' : ''}`}>
-      <span className="home-brand__mark">
-        <PineMark title={restaurantName} />
-      </span>
-      <span className="home-brand__copy">
-        <strong>{restaurantName.toLocaleUpperCase('tr-TR')}</strong>
-        <small>ANADOLU KAVAĞI</small>
-      </span>
-    </span>
+    <>
+      {words.slice(0, splitAt).join(' ')}
+      <br />
+      {words.slice(splitAt).join(' ')}
+    </>
   );
 }
 
 export function HomePage({ menu, onOpenMenu, onOpenCategory }) {
   const { lang, setLang, t } = useLang();
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
+  const [mobileNavVisible, setMobileNavVisible] = useState(false);
+  const mobileTriggerRef = useRef(null);
+  const mobileNavigationRef = useRef(null);
+  const mobileHideTimerRef = useRef(null);
+  const mobileOpenFrameRef = useRef(null);
   const settings = menu.settings ?? {};
   const categories = menu.categories ?? [];
   const restaurantName = settings.restaurantName ?? 'Çam Vadisi';
+  const address = settings.address || DEFAULT_ADDRESS;
+  const phones = settings.phones?.length > 0 ? settings.phones.slice(0, 2) : DEFAULT_PHONES;
+  const locationCandidate = Array.isArray(settings.location)
+    ? settings.location.map(Number)
+    : [];
+  const location =
+    locationCandidate.length === 2 && locationCandidate.every(Number.isFinite)
+      ? locationCandidate
+      : DEFAULT_LOCATION;
+  const hoursLabel = formatHours(settings.hours);
+  const latitudeLabel = formatCoordinate(location[0], 'N', 'S');
+  const longitudeLabel = formatCoordinate(location[1], 'E', 'W');
 
   useEffect(() => {
     trackView('open');
   }, []);
 
-  const mapsUrl = settings.location?.length === 2
-    ? `https://www.google.com/maps/search/?api=1&query=${settings.location[0]},${settings.location[1]}`
-    : `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
-        settings.address ?? 'Çam Vadisi Anadolu Kavağı',
-      )}`;
+  const mapsUrl =
+    'https://www.google.com/maps/dir/?api=1&destination=' +
+    encodeURIComponent(location[0] + ',' + location[1]);
 
   const categoryCards = useMemo(
     () =>
@@ -127,324 +221,561 @@ export function HomePage({ menu, onOpenMenu, onOpenCategory }) {
       return {
         ...spec,
         category: match?.category,
-        name: match ? t(match.product.name) : spec.fallbackName,
-        description: match && t(match.product.description)
-          ? t(match.product.description)
-          : spec.fallbackDescription,
+        name: match ? stripTrailingVariantLabel(t(match.product.name)) : spec.fallbackName,
+        description:
+          match && t(match.product.description)
+            ? t(match.product.description)
+            : spec.fallbackDescription,
       };
     });
   }, [categories, t]);
+
+  const closeMobileNav = useCallback(({ restoreFocus = false } = {}) => {
+    window.clearTimeout(mobileHideTimerRef.current);
+    window.cancelAnimationFrame(mobileOpenFrameRef.current);
+    setMobileNavOpen(false);
+    mobileHideTimerRef.current = window.setTimeout(() => {
+      setMobileNavVisible(false);
+    }, 320);
+
+    if (restoreFocus) {
+      window.requestAnimationFrame(() => mobileTriggerRef.current?.focus());
+    }
+  }, []);
+
+  const openMobileNav = useCallback(() => {
+    window.clearTimeout(mobileHideTimerRef.current);
+    window.cancelAnimationFrame(mobileOpenFrameRef.current);
+    setMobileNavVisible(true);
+    mobileOpenFrameRef.current = window.requestAnimationFrame(() => {
+      setMobileNavOpen(true);
+    });
+  }, []);
+
+  useEffect(() => {
+    if (!mobileNavOpen) return undefined;
+
+    document.body.classList.add('home-menu-is-open');
+
+    function handlePointerDown(event) {
+      if (
+        !mobileNavigationRef.current?.contains(event.target) &&
+        !mobileTriggerRef.current?.contains(event.target)
+      ) {
+        closeMobileNav();
+      }
+    }
+
+    function handleKeyDown(event) {
+      if (event.key !== 'Escape') return;
+      event.preventDefault();
+      closeMobileNav({ restoreFocus: true });
+    }
+
+    function handleResize() {
+      if (window.innerWidth > 1080) closeMobileNav();
+    }
+
+    document.addEventListener('pointerdown', handlePointerDown);
+    document.addEventListener('keydown', handleKeyDown);
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      document.body.classList.remove('home-menu-is-open');
+      document.removeEventListener('pointerdown', handlePointerDown);
+      document.removeEventListener('keydown', handleKeyDown);
+      window.removeEventListener('resize', handleResize);
+    };
+  }, [closeMobileNav, mobileNavOpen]);
+
+  useEffect(
+    () => () => {
+      window.clearTimeout(mobileHideTimerRef.current);
+      window.cancelAnimationFrame(mobileOpenFrameRef.current);
+      document.body.classList.remove('home-menu-is-open');
+    },
+    [],
+  );
 
   function openCategory(slug) {
     if (slug) onOpenCategory(slug);
     else onOpenMenu();
   }
 
-  return (
-    <main className="home-page">
-      <section className="home-hero" aria-labelledby="home-hero-title">
-        <img
-          className="home-hero__image"
-          src="/hero-cam-vadisi-v1.png"
-          alt="Çamların arasından Boğaz'a bakan kahvaltı sofrası"
-          width="1536"
-          height="1024"
-          fetchPriority="high"
-        />
-        <div className="home-hero__veil" aria-hidden="true" />
+  function closeMobileNavFromLink() {
+    closeMobileNav({ restoreFocus: true });
+  }
 
-        <header className="home-header home-shell">
-          <a className="home-brand-link" href="#home-top" aria-label="Çam Vadisi ana sayfa">
-            <Brand restaurantName={restaurantName} />
-          </a>
-
-          <nav className="home-nav" aria-label="Ana menü">
-            <a href="#home-menu">Menü</a>
-            <a href="#home-story">Hikâyemiz</a>
-            <a href="#home-flavours">Lezzetler</a>
-            <a href="#home-contact">Ulaşım</a>
-          </nav>
-
-          <div className="home-header__actions">
-            <div className="home-languages" role="group" aria-label="Dil seçimi">
-              {LANG_ORDER.map((code) => (
-                <button
-                  key={code}
-                  type="button"
-                  className={lang === code ? 'is-active' : ''}
-                  aria-pressed={lang === code}
-                  onClick={() => setLang(code)}
-                >
-                  {code.toUpperCase()}
-                </button>
-              ))}
-            </div>
-            <a
-              className="home-button home-button--compact home-button--primary"
-              href={mapsUrl}
-              target="_blank"
-              rel="noreferrer"
-            >
-              Yol Tarifi
-            </a>
-          </div>
-
+  function renderLanguages(mobile = false) {
+    return (
+      <div
+        className={'home-languages' + (mobile ? ' home-languages--mobile' : '')}
+        role="group"
+        aria-label="Dil seçenekleri"
+      >
+        {LANG_ORDER.map((code) => (
           <button
-            className="home-mobile-menu"
+            key={code}
             type="button"
-            aria-label={mobileNavOpen ? 'Menüyü kapat' : 'Menüyü aç'}
-            aria-expanded={mobileNavOpen}
-            onClick={() => setMobileNavOpen((open) => !open)}
+            className={lang === code ? 'is-active' : ''}
+            aria-pressed={lang === code}
+            onClick={() => setLang(code)}
           >
-            {mobileNavOpen ? <X weight="bold" /> : <List weight="bold" />}
+            {code.toUpperCase()}
           </button>
-        </header>
+        ))}
+      </div>
+    );
+  }
 
-        {mobileNavOpen && (
-          <nav className="home-mobile-nav" aria-label="Mobil ana menü">
-            <a href="#home-menu" onClick={() => setMobileNavOpen(false)}>Menü</a>
-            <a href="#home-story" onClick={() => setMobileNavOpen(false)}>Hikâyemiz</a>
-            <a href="#home-flavours" onClick={() => setMobileNavOpen(false)}>Lezzetler</a>
-            <a href="#home-contact" onClick={() => setMobileNavOpen(false)}>Ulaşım</a>
-          </nav>
-        )}
+  return (
+    <>
+      <a className="home-skip-link" href="#home-content">
+        İçeriğe geç
+      </a>
+      <main className="home-page" id="home-content">
+        <section className="home-hero" id="top" aria-labelledby="home-hero-title">
+          <img
+            className="home-hero__image"
+            src="/hero-cam-vadisi-v1.png"
+            alt="Çamların arasından Boğaz'a bakan kahvaltı sofrası"
+            width="1672"
+            height="941"
+            fetchPriority="high"
+          />
+          <div className="home-hero__veil" aria-hidden="true" />
 
-        <div className="home-hero__content home-shell" id="home-top">
-          <p className="home-eyebrow">BEYKOZ · ANADOLU KAVAĞI</p>
-          <h1 id="home-hero-title">
-            Gün, ormanın
-            <br />
-            içinde başlar.
-          </h1>
-          <p className="home-hero__lead">
-            Çamların serinliği, Boğaz’ın dinginliği ve uzun sofraların sıcaklığı bir arada.
-          </p>
-          <div className="home-hero__actions">
-            <button
-              className="home-button home-button--primary"
-              type="button"
-              onClick={onOpenMenu}
-            >
-              Menüyü İncele
-              <ArrowUpRight weight="bold" aria-hidden="true" />
-            </button>
-            <a className="home-button home-button--outline" href="#home-contact">
-              Bizi Bulun
-              <MapPin weight="fill" aria-hidden="true" />
+          <header className="home-site-header home-shell">
+            <a className="home-brand" href="#top" aria-label="Çam Vadisi ana sayfa">
+              <img
+                className="home-brand__mark"
+                src="/favicon.svg"
+                alt=""
+                width="64"
+                height="64"
+              />
+              <span>
+                <strong>{restaurantName.toLocaleUpperCase('tr-TR')}</strong>
+                <small>ANADOLU KAVAĞI</small>
+              </span>
             </a>
-          </div>
-        </div>
 
-        <div className="home-hero__foot home-shell">
-          <span>41.1776° N · 29.0959° E</span>
-          <a href="#home-menu">
-            Aşağı kaydır
-            <ArrowDown weight="bold" aria-hidden="true" />
-          </a>
-        </div>
-      </section>
-
-      <section className="home-menu-section home-section" id="home-menu">
-        <div className="home-shell">
-          <div className="home-section-heading">
-            <div>
-              <p className="home-eyebrow home-eyebrow--dark">SOFRADAN SEÇMELER</p>
-              <h2>
-                Her saate yakışan
-                <br />
-                yerel lezzetler.
-              </h2>
+            <div className="home-header-actions">
+              {renderLanguages()}
+              <a
+                className="home-button home-button--compact home-button--primary"
+                href={mapsUrl}
+                target="_blank"
+                rel="noreferrer"
+              >
+                Yol Tarifi
+              </a>
             </div>
-            <div className="home-section-heading__aside">
-              <p>
-                Kahvaltıdan gün batımına, mevsime ve günlük tazeliğe göre hazırlanan
-                sade bir menü.
-              </p>
-              <button className="home-text-link" type="button" onClick={onOpenMenu}>
-                Tüm menüyü görüntüle
+
+            <button
+              ref={mobileTriggerRef}
+              className="home-menu-trigger"
+              type="button"
+              aria-label={mobileNavOpen ? 'Ana menüyü kapat' : 'Ana menüyü aç'}
+              aria-expanded={mobileNavOpen}
+              aria-controls="home-mobile-navigation"
+              onClick={() =>
+                mobileNavOpen ? closeMobileNav({ restoreFocus: true }) : openMobileNav()
+              }
+            >
+              <span className="home-menu-trigger__index" aria-hidden="true">
+                04
+              </span>
+              <span>{mobileNavOpen ? 'KAPAT' : 'MENÜ'}</span>
+            </button>
+          </header>
+
+          <div
+            ref={mobileNavigationRef}
+            className={
+              'home-mobile-navigation' + (mobileNavOpen ? ' is-open' : '')
+            }
+            id="home-mobile-navigation"
+            aria-label="Ana menü"
+            aria-hidden={!mobileNavOpen}
+            hidden={!mobileNavVisible}
+            inert={mobileNavOpen ? undefined : ''}
+          >
+            <div className="home-mobile-navigation__inner home-shell">
+              <div className="home-mobile-navigation__heading" aria-hidden="true">
+                <span>VADİDE YÖNLER</span>
+                <small>DÖRT DURAK</small>
+              </div>
+
+              <nav className="home-mobile-navigation__links" aria-label="Mobil ana menü">
+                {NAV_ITEMS.map((item) => (
+                  <a key={item.href} href={item.href} onClick={closeMobileNavFromLink}>
+                    <span className="home-mobile-navigation__number">{item.number}</span>
+                    <span>
+                      <strong>{item.title}</strong>
+                      <small>{item.description}</small>
+                    </span>
+                  </a>
+                ))}
+              </nav>
+
+              <div className="home-mobile-navigation__footer">
+                {renderLanguages(true)}
+                <a
+                  className="home-mobile-navigation__route"
+                  href={mapsUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  onClick={closeMobileNavFromLink}
+                >
+                  YOL TARİFİ
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <nav className="home-grove-nav home-shell" aria-label="Ana menü">
+            {NAV_ITEMS.map((item) => (
+              <a
+                key={item.href}
+                className={'home-grove-nav__item ' + item.className}
+                href={item.href}
+              >
+                <span className="home-grove-nav__label">{item.title}</span>
+                <span className="home-grove-nav__meta">{item.description}</span>
+              </a>
+            ))}
+          </nav>
+
+          <div className="home-hero__content home-shell">
+            <p className="home-eyebrow">BEYKOZ · ANADOLU KAVAĞI</p>
+            <h1 id="home-hero-title">
+              Gün, ormanın
+              <br />
+              içinde başlar.
+            </h1>
+            <p className="home-hero__lead">
+              Çamların serinliği, Boğaz’ın dinginliği ve uzun sofraların sıcaklığı bir
+              arada.
+            </p>
+            <div className="home-hero__actions">
+              <button className="home-button home-button--primary" type="button" onClick={onOpenMenu}>
+                Menüyü İncele
                 <ArrowUpRight weight="bold" aria-hidden="true" />
               </button>
+              <a className="home-button home-button--outline" href="#ulasim">
+                Bizi Bulun
+                <MapPin weight="fill" aria-hidden="true" />
+              </a>
             </div>
           </div>
 
-          <div className="home-category-grid">
-            {categoryCards.map((card) => (
-              <article className="home-category-card" key={card.slug}>
-                <img src={card.image} alt={card.title} loading="lazy" />
-                <div className="home-category-card__shade" aria-hidden="true" />
-                <div className="home-category-card__content">
-                  <span>{card.count || '—'} seçenek</span>
-                  <h3>{card.title}</h3>
+          <div className="home-hero__foot">
+            <div className="home-hero__foot-inner home-shell">
+              <span>{latitudeLabel + ' · ' + longitudeLabel}</span>
+              <a href="#menu">
+                Aşağı kaydır
+                <ArrowDown weight="bold" aria-hidden="true" />
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <section className="cv-menu home-section" id="menu" aria-labelledby="cv-menu-title">
+          <div className="home-shell">
+            <header className="cv-menu__intro">
+              <div>
+                <p className="cv-section-kicker home-eyebrow home-eyebrow--dark">
+                  <span aria-hidden="true">01 /</span> SOFRADAN SEÇMELER
+                </p>
+                <h2 className="cv-menu__title" id="cv-menu-title">
+                  Her saate yakışan
+                  <br />
+                  yerel lezzetler.
+                </h2>
+              </div>
+              <div className="cv-menu__summary">
+                <p>
+                  Kahvaltıdan gün batımına, mevsime ve günlük tazeliğe göre hazırlanan
+                  sade bir menü.
+                </p>
+                <button className="home-text-link" type="button" onClick={onOpenMenu}>
+                  Tüm menüyü görüntüle
+                  <ArrowUpRight weight="bold" aria-hidden="true" />
+                </button>
+              </div>
+            </header>
+
+            <div className="cv-menu__trail">
+              {categoryCards.map((card, index) => (
+                <article
+                  className={'cv-menu-band ' + card.modifier}
+                  key={card.slug}
+                >
+                  <figure className="cv-menu-band__media">
+                    <img
+                      className="cv-menu-band__image"
+                      src={card.image}
+                      alt={card.title}
+                      loading="lazy"
+                    />
+                  </figure>
+                  <div className="cv-menu-band__body">
+                    <span className="cv-menu-band__index" aria-hidden="true">
+                      {String(index + 1).padStart(2, '0')}
+                    </span>
+                    <p className="cv-menu-band__count">
+                      {card.count || '—'} seçenek
+                    </p>
+                    <h3 className="cv-menu-band__title">
+                      <SplitTitle>{card.title}</SplitTitle>
+                    </h3>
+                    <p className="cv-menu-band__copy">{card.copy}</p>
+                    <button
+                      className="cv-menu-band__link"
+                      type="button"
+                      onClick={() => openCategory(card.category?.slug ?? card.slug)}
+                      aria-label={card.title + ' bölümünü görüntüle'}
+                    >
+                      Sofraya bak
+                      <ArrowUpRight weight="bold" aria-hidden="true" />
+                    </button>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="cv-story home-section" id="hikaye" aria-labelledby="cv-story-title">
+          <div className="home-shell cv-story__mast">
+            <figure className="cv-story__media">
+              <img
+                className="cv-story__image"
+                src="/logo-banner.webp"
+                alt="Çam Vadisi'nin doğa içindeki mekânı"
+                loading="lazy"
+              />
+              <span className="cv-story__era cv-story__era--past" aria-hidden="true">
+                1998
+              </span>
+              <span className="cv-story__era cv-story__era--present" aria-hidden="true">
+                BUGÜN
+              </span>
+              <figcaption>
+                <span>1998'DEN BERİ</span>
+                <strong>
+                  Aynı vadide,
+                  <br />
+                  aynı sıcaklıkla.
+                </strong>
+              </figcaption>
+            </figure>
+
+            <div className="cv-story__field">
+              <p className="cv-section-kicker home-eyebrow home-eyebrow--dark">
+                <span aria-hidden="true">02 /</span> ÇAM VADİSİ'NDE
+              </p>
+              <h2 className="cv-story__title" id="cv-story-title">
+                Şehrin telaşına
+                <br />
+                kısa bir ara.
+              </h2>
+              <p className="cv-story__lead">
+                Burası yalnızca yemek yenilen bir yer değil; çocukların koştuğu, çayın
+                tazelendiği, sohbetin aceleye gelmediği bir vadi.
+              </p>
+              <dl className="cv-story__facts">
+                <div className="cv-story__fact">
+                  <dt>28</dt>
+                  <dd>yıllık yerel hafıza</dd>
+                </div>
+                <div className="cv-story__fact">
+                  <dt>4</dt>
+                  <dd>mevsim açık sofra</dd>
+                </div>
+                <div className="cv-story__fact">
+                  <dt>0</dt>
+                  <dd>şehir gürültüsü</dd>
+                </div>
+              </dl>
+              <a className="cv-story__action home-button home-button--dark" href="#lezzetler">
+                Lezzetleri keşfedin
+                <ArrowUpRight weight="bold" aria-hidden="true" />
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <section
+          className="cv-featured home-section"
+          id="lezzetler"
+          aria-labelledby="cv-featured-title"
+        >
+          <div className="home-shell">
+            <header className="cv-featured__intro">
+              <div>
+                <p className="cv-section-kicker home-eyebrow">
+                  <span aria-hidden="true">03 /</span> BUGÜN SOFRADA
+                </p>
+                <h2 className="cv-featured__title" id="cv-featured-title">
+                  Günün öne çıkanları.
+                </h2>
+              </div>
+              <p className="cv-featured__note">
+                Mutfağın o günkü tazeliğine göre seçilen üç lezzet.
+              </p>
+            </header>
+
+            <div className="cv-dish-ledger">
+              {features.map((feature, index) => (
+                <article
+                  className={'cv-dish' + (index === 1 ? ' cv-dish--offset' : '')}
+                  key={feature.needle}
+                >
+                  <span className="cv-dish__index" aria-hidden="true">
+                    {String(index + 1).padStart(2, '0')}
+                  </span>
+                  <div className="cv-dish__body">
+                    <h3 className="cv-dish__title">{feature.name}</h3>
+                    <p className="cv-dish__description">{feature.description}</p>
+                  </div>
+                  <strong className="cv-dish__meta">{feature.label}</strong>
                   <button
+                    className="cv-dish__link"
                     type="button"
-                    onClick={() => openCategory(card.category?.slug ?? card.slug)}
-                    aria-label={`${card.title} bölümünü görüntüle`}
+                    onClick={() => openCategory(feature.category?.slug)}
+                    aria-label={feature.name + ' ürününü menüde görüntüle'}
                   >
                     <ArrowUpRight weight="bold" aria-hidden="true" />
                   </button>
-                </div>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="home-story home-section" id="home-story">
-        <div className="home-shell home-story__grid">
-          <div className="home-story__image-wrap">
-            <img
-              className="home-story__image"
-              src="/logo-banner.webp"
-              alt="Çam Vadisi'nin doğa içindeki mekânı"
-              loading="lazy"
-            />
-            <div className="home-story__note">
-              <span>1998'DEN BERİ</span>
-              <strong>
-                Aynı vadide,
-                <br />
-                aynı sıcaklıkla.
-              </strong>
+                </article>
+              ))}
             </div>
           </div>
+        </section>
 
-          <div className="home-story__copy">
-            <p className="home-eyebrow home-eyebrow--dark">ÇAM VADİSİ'NDE</p>
-            <h2>
-              Şehrin telaşına
-              <br />
-              kısa bir ara.
-            </h2>
-            <p className="home-story__lead">
-              Burası yalnızca yemek yenilen bir yer değil; çocukların koştuğu, çayın
-              tazelendiği, sohbetin aceleye gelmediği bir vadi.
+        <section
+          className="cv-destination home-section"
+          id="ulasim"
+          aria-labelledby="cv-destination-title"
+        >
+          <div className="home-shell">
+            <p className="cv-destination__coordinates">
+              <span>{latitudeLabel}</span>
+              <span>{longitudeLabel}</span>
             </p>
-            <div className="home-story__facts">
-              <div><strong>28</strong><span>yıllık yerel hafıza</span></div>
-              <div><strong>4</strong><span>mevsim açık sofra</span></div>
-              <div><strong>0</strong><span>şehir gürültüsü</span></div>
-            </div>
-            <a className="home-button home-button--dark" href="#home-flavours">
-              Lezzetleri keşfedin
-              <ArrowUpRight weight="bold" aria-hidden="true" />
-            </a>
-          </div>
-        </div>
-      </section>
 
-      <section className="home-featured home-section" id="home-flavours">
-        <div className="home-shell">
-          <div className="home-featured__header">
-            <div>
-              <p className="home-eyebrow">BUGÜN SOFRADA</p>
-              <h2>Günün öne çıkanları.</h2>
-            </div>
-            <p>Mutfağın o günkü tazeliğine göre seçilen üç lezzet.</p>
-          </div>
+            <div className="cv-destination__grid">
+              <figure className="cv-destination__media">
+                <img
+                  className="cv-destination__image"
+                  src="/logo-banner.webp"
+                  alt="Çam Vadisi'nin doğa içindeki mekânı"
+                  loading="lazy"
+                />
+                <figcaption>Anadolu Kavağı · Beykoz</figcaption>
+              </figure>
 
-          <div className="home-dish-list">
-            {features.map((feature, index) => (
-              <article className="home-dish" key={feature.needle}>
-                <div>
-                  <span>{String(index + 1).padStart(2, '0')}</span>
-                  <h3>{feature.name}</h3>
-                  <p>{feature.description}</p>
+              <div className="cv-destination__content">
+                <p className="cv-section-kicker home-eyebrow home-eyebrow--dark">
+                  <span aria-hidden="true">04 /</span> BİZE ULAŞIN
+                </p>
+                <h2 className="cv-destination__title" id="cv-destination-title">
+                  Boğaz yolunun
+                  <br />
+                  en yeşil durağı.
+                </h2>
+                <address className="cv-destination__address">{address}</address>
+
+                <div className="cv-destination__meta">
+                  <div className="cv-destination__meta-group">
+                    <span className="cv-destination__label">Telefon</span>
+                    <div className="cv-destination__phones">
+                      {phones.map((phone) => (
+                        <a key={phone} href={phoneHref(phone)}>
+                          {formatPhone(phone)}
+                        </a>
+                      ))}
+                    </div>
+                  </div>
+                  <div className="cv-destination__meta-group">
+                    <span className="cv-destination__label">Açılış saatleri</span>
+                    <strong>{hoursLabel}</strong>
+                  </div>
                 </div>
-                <strong>{feature.label}</strong>
-                <button
-                  type="button"
-                  onClick={() => openCategory(feature.category?.slug)}
-                  aria-label={`${feature.name} ürününü menüde görüntüle`}
+
+                <a
+                  className="cv-destination__directions home-button home-button--primary"
+                  href={mapsUrl}
+                  target="_blank"
+                  rel="noreferrer"
                 >
+                  Google Maps'te Aç
                   <ArrowUpRight weight="bold" aria-hidden="true" />
-                </button>
-              </article>
-            ))}
+                </a>
+              </div>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section className="home-location home-section" id="home-contact">
-        <div className="home-shell home-location__grid">
-          <div className="home-location__copy">
-            <p className="home-eyebrow home-eyebrow--dark">BİZE ULAŞIN</p>
-            <h2>
-              Boğaz yolunun
-              <br />
-              en yeşil durağı.
-            </h2>
-            <p>
-              {settings.address ??
-                'Anadolu Kavağı Mahallesi, Feneryolu Caddesi, Çam Vadisi Cafe No:12, Beykoz / İstanbul'}
+        <footer className="cv-footer" aria-labelledby="cv-footer-title">
+          <div className="home-shell">
+            <p className="cv-section-kicker cv-footer__kicker">
+              <span aria-hidden="true">05 /</span> VADİDEN
             </p>
-            {settings.phones?.length > 0 && (
-              <div className="home-contact-row">
-                {settings.phones.slice(0, 2).map((phone) => (
-                  <a key={phone} href={`tel:${phone.replace(/\s/g, '')}`}>
+            <h2 className="cv-footer__marquee" id="cv-footer-title">
+              <span className="cv-footer__word">ÇAM</span>
+              <span className="cv-footer__word cv-footer__word--valley">VADİSİ</span>
+            </h2>
+
+            <div className="cv-footer__grid">
+              <div className="cv-footer__identity">
+                <strong>{restaurantName.toLocaleUpperCase('tr-TR')}</strong>
+                <span>ANADOLU KAVAĞI</span>
+                <p className="cv-footer__note">
+                  Doğanın içinde, Boğaz'ın kıyısında uzun sofralar.
+                </p>
+              </div>
+
+              <address className="cv-footer__contact">
+                <span>İletişim</span>
+                {phones.map((phone) => (
+                  <a key={phone} href={phoneHref(phone)}>
                     {formatPhone(phone)}
                   </a>
                 ))}
+              </address>
+
+              <div className="cv-footer__hours">
+                <span>Açılış saatleri</span>
+                <strong>{hoursLabel}</strong>
               </div>
-            )}
-            <a
-              className="home-button home-button--primary"
-              href={mapsUrl}
-              target="_blank"
-              rel="noreferrer"
-            >
-              Google Maps'te Aç
-              <ArrowUpRight weight="bold" aria-hidden="true" />
-            </a>
+
+              <div className="cv-footer__social">
+                <a href={INSTAGRAM_URL} target="_blank" rel="noreferrer">
+                  <InstagramLogo weight="bold" aria-hidden="true" />
+                  Instagram
+                </a>
+                <span aria-hidden="true">·</span>
+                <a href={mapsUrl} target="_blank" rel="noreferrer">
+                  Google Maps
+                </a>
+              </div>
+
+              <a className="cv-footer__back home-button home-button--outline" href="#top">
+                Başa dön
+                <ArrowUp weight="bold" aria-hidden="true" />
+              </a>
+            </div>
+
+            <div className="cv-footer__legal">
+              <span>© {new Date().getFullYear()} Çam Vadisi</span>
+              <span>{latitudeLabel + ' · ' + longitudeLabel}</span>
+            </div>
           </div>
-
-          <a
-            className="home-map-card"
-            href={mapsUrl}
-            target="_blank"
-            rel="noreferrer"
-            aria-label="Çam Vadisi konumunu Google Maps'te aç"
-          >
-            <img
-              className="home-map-card__image"
-              src="/cam-vadisi-map-v1.png"
-              alt=""
-              loading="lazy"
-            />
-            <span className="home-map-card__pin">
-              <MapPin weight="fill" aria-hidden="true" />
-              <span>
-                <strong>ÇAM VADİSİ</strong>
-                <small>Anadolu Kavağı</small>
-              </span>
-            </span>
-          </a>
-        </div>
-      </section>
-
-      <footer className="home-footer">
-        <div className="home-shell home-footer__top">
-          <Brand compact restaurantName={restaurantName} />
-          <p>Doğanın içinde, Boğaz'ın kıyısında uzun sofralar.</p>
-          <a className="home-button home-button--outline" href="#home-top">
-            Başa dön
-            <ArrowUp weight="bold" aria-hidden="true" />
-          </a>
-        </div>
-        <div className="home-shell home-footer__bottom">
-          <span>© {new Date().getFullYear()} Çam Vadisi</span>
-          <span>Her gün 08:00 — 23:00</span>
-          <span className="home-footer__socials">
-            <a href={INSTAGRAM_URL} target="_blank" rel="noreferrer">
-              <InstagramLogo weight="bold" aria-hidden="true" />
-              @cam.vadisi
-            </a>
-            <a href={mapsUrl} target="_blank" rel="noreferrer">
-              <MapPin weight="bold" aria-hidden="true" />
-              Google Maps
-            </a>
-          </span>
-        </div>
-      </footer>
-    </main>
+        </footer>
+      </main>
+    </>
   );
 }
