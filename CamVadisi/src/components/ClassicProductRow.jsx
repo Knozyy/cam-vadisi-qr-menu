@@ -62,7 +62,9 @@ export function ClassicProductRow({
           {price.price != null ? (
             <span className="classic-product-price">
               {pricePrefix && <small>{pricePrefix}</small>}
-              {formatPrice(price.price)}
+              <bdi className="classic-product-price-value" dir="ltr">
+                {formatPrice(price.price)}
+              </bdi>
             </span>
           ) : (
             <span />

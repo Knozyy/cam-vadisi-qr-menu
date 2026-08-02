@@ -1,5 +1,5 @@
 import { Translate } from "@phosphor-icons/react";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useLang } from "../lib/LangContext.jsx";
 import { UI } from "../lib/ui-strings.js";
 import { LangStrip } from "./LangStrip.jsx";
@@ -16,6 +16,36 @@ export function TopBar({
 }) {
   const { lang, t } = useLang();
   const [showLanguages, setShowLanguages] = useState(false);
+  const languageButtonRef = useRef(null);
+  const languagePopoverRef = useRef(null);
+
+  useEffect(() => {
+    if (!showLanguages) return undefined;
+
+    function onPointerDown(event) {
+      if (
+        languageButtonRef.current?.contains(event.target) ||
+        languagePopoverRef.current?.contains(event.target)
+      ) {
+        return;
+      }
+      setShowLanguages(false);
+    }
+
+    function onKeyDown(event) {
+      if (event.key !== "Escape") return;
+      event.preventDefault();
+      setShowLanguages(false);
+      languageButtonRef.current?.focus();
+    }
+
+    document.addEventListener("pointerdown", onPointerDown);
+    document.addEventListener("keydown", onKeyDown);
+    return () => {
+      document.removeEventListener("pointerdown", onPointerDown);
+      document.removeEventListener("keydown", onKeyDown);
+    };
+  }, [showLanguages]);
 
   return (
     <header className="classic-topbar">
@@ -34,10 +64,12 @@ export function TopBar({
 
       <div className="classic-topbar-actions">
         <button
+          ref={languageButtonRef}
           type="button"
           onClick={() => setShowLanguages((open) => !open)}
           className="classic-language-button"
           aria-expanded={showLanguages}
+          aria-controls="classic-language-popover"
           aria-label="Dil seçimi"
         >
           <Translate size={18} weight="bold" aria-hidden="true" />
@@ -56,8 +88,20 @@ export function TopBar({
       </div>
 
       {showLanguages && (
-        <div className="classic-language-popover">
-          <LangStrip tone="light" />
+        <div
+          ref={languagePopoverRef}
+          id="classic-language-popover"
+          className="classic-language-popover"
+          role="region"
+          aria-label="Dil seçimi"
+        >
+          <LangStrip
+            tone="light"
+            onSelect={() => {
+              setShowLanguages(false);
+              languageButtonRef.current?.focus();
+            }}
+          />
         </div>
       )}
     </header>

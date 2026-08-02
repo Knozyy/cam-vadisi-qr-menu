@@ -75,7 +75,7 @@ export function ProductSheet({
                 >
                   <span className="text-ink">{t(variant.name)}</span>
                   <span className="ms-auto font-semibold text-pine tabular-nums">
-                    {formatPrice(variant.price)}
+                    <bdi dir="ltr">{formatPrice(variant.price)}</bdi>
                   </span>
                 </li>
               ))}
@@ -91,7 +91,7 @@ export function ProductSheet({
               {t(UI.price)}
             </span>
             <span className="ms-auto text-lg font-semibold text-pine tabular-nums">
-              {formatPrice(product.basePrice)}
+              <bdi dir="ltr">{formatPrice(product.basePrice)}</bdi>
             </span>
           </div>
         )}

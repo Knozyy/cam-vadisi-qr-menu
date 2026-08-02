@@ -4,6 +4,10 @@ import { CategoryTabs } from "./components/CategoryTabs.jsx";
 import { ClassicProductRow } from "./components/ClassicProductRow.jsx";
 import { DietFilterBar } from "./components/DietFilterBar.jsx";
 import { MenuListBar } from "./components/MenuListBar.jsx";
+import {
+  MenuListClearButton,
+  MenuListContent,
+} from "./components/MenuListContent.jsx";
 import { MenuListSheet } from "./components/MenuListSheet.jsx";
 import { ProductSheet } from "./components/ProductSheet.jsx";
 import { SearchBar } from "./components/SearchBar.jsx";
@@ -159,93 +163,142 @@ export function MenuPage({ menu, offline, jumpTo, onOpenHome }) {
         <span>{t(UI.menuIntroText)}</span>
       </section>
 
-      <div className="classic-menu-tools">
-        <SearchBar value={query} onChange={setQuery} />
-        <CategoryTabs
-          categories={categories}
-          activeSlug={activeCategory}
-          onSelect={selectCategory}
-          includeAll
-        />
-        <DietFilterBar
-          available={availableFilters}
-          dietTags={dietTags}
-          avoidTags={avoidTags}
-          open={showFilters}
-          onToggleOpen={() => setShowFilters((open) => !open)}
-          onToggleDiet={(tag) => setDietTags((tags) => toggleTag(tags, tag))}
-          onToggleAvoid={(tag) => setAvoidTags((tags) => toggleTag(tags, tag))}
-          onClear={clearFilters}
-        />
-      </div>
+      <div className="classic-menu-layout">
+        <aside className="classic-menu-sidebar">
+          <div className="classic-menu-tools">
+            <SearchBar value={query} onChange={setQuery} />
+            <CategoryTabs
+              categories={categories}
+              activeSlug={activeCategory}
+              onSelect={selectCategory}
+              includeAll
+            />
+            <DietFilterBar
+              available={availableFilters}
+              dietTags={dietTags}
+              avoidTags={avoidTags}
+              open={showFilters}
+              onToggleOpen={() => setShowFilters((open) => !open)}
+              onToggleDiet={(tag) =>
+                setDietTags((tags) => toggleTag(tags, tag))
+              }
+              onToggleAvoid={(tag) =>
+                setAvoidTags((tags) => toggleTag(tags, tag))
+              }
+              onClear={clearFilters}
+            />
+          </div>
+        </aside>
 
-      {/*
-        key YALNIZCA kategoriye bagli: kategori degisimi bilincli bir gecis, giris
-        animasyonunu yeniden oynatmasi dogru. Aramayi ya da dili de keye koymak her
-        tus vurusunda 139 satirlik katalogu sokup yeniden kuruyor ve animasyonu
-        bastan oynatiyordu.
-      */}
-      <main key={activeCategory} id="menu-catalog" className="classic-menu-catalog">
-        <div className="classic-result-meta">
-          <strong>{activeLabel}</strong>
-          <span>
-            {visibleCount} {t(UI.products)}
-          </span>
+        <div className="classic-menu-content">
+          {/*
+            key YALNIZCA kategoriye bagli: kategori degisimi bilincli bir gecis, giris
+            animasyonunu yeniden oynatmasi dogru. Aramayi ya da dili de keye koymak her
+            tus vurusunda 139 satirlik katalogu sokup yeniden kuruyor ve animasyonu
+            bastan oynatiyordu.
+          */}
+          <main
+            key={activeCategory}
+            id="menu-catalog"
+            className="classic-menu-catalog"
+          >
+            <div className="classic-result-meta">
+              <strong>{activeLabel}</strong>
+              <span>
+                {visibleCount} {t(UI.products)}
+              </span>
+            </div>
+
+            {visibleCategories.length === 0 ? (
+              <div className="classic-no-results">
+                {/* Sonucu suzgec sildiyse "baska kelime deneyin" yanlis yonlendirir. */}
+                <p>{t(filtersActive ? UI.filtersNoMatch : UI.noResults)}</p>
+                <span>
+                  {t(filtersActive ? UI.filtersNoMatchHint : UI.noResultsHint)}
+                </span>
+                {filtersActive && (
+                  <button
+                    type="button"
+                    onClick={clearFilters}
+                    className="classic-filter-reset"
+                  >
+                    {t(UI.filtersClear)}
+                  </button>
+                )}
+              </div>
+            ) : (
+              visibleCategories.map((category) => (
+                <section
+                  key={category.slug}
+                  data-slug={category.slug}
+                  className="classic-category-section"
+                >
+                  <div className="classic-category-heading">
+                    <span aria-hidden="true" />
+                    <h2>{t(category.name)}</h2>
+                    <span aria-hidden="true" />
+                  </div>
+                  {category.timeStart && category.timeEnd && (
+                    <p className="classic-category-time">
+                      <bdi dir="ltr">
+                        {category.timeStart} – {category.timeEnd}
+                      </bdi>
+                    </p>
+                  )}
+                  <ul className="classic-product-list">
+                    {category.products.map((product, index) => (
+                      <ClassicProductRow
+                        key={product.id}
+                        product={product}
+                        quantity={menuList.get(product.id)}
+                        onIncrement={menuList.increment}
+                        onDecrement={menuList.decrement}
+                        onOpen={setOpenProduct}
+                        stagger={index}
+                      />
+                    ))}
+                  </ul>
+                </section>
+              ))
+            )}
+
+            <VenueFooter settings={menu.settings} />
+          </main>
         </div>
 
-        {visibleCategories.length === 0 ? (
-          <div className="classic-no-results">
-            {/* Sonucu suzgec sildiyse "baska kelime deneyin" yanlis yonlendirir. */}
-            <p>{t(filtersActive ? UI.filtersNoMatch : UI.noResults)}</p>
-            <span>
-              {t(filtersActive ? UI.filtersNoMatchHint : UI.noResultsHint)}
-            </span>
-            {filtersActive && (
-              <button
-                type="button"
-                onClick={clearFilters}
-                className="classic-filter-reset"
-              >
-                {t(UI.filtersClear)}
-              </button>
-            )}
-          </div>
-        ) : (
-          visibleCategories.map((category) => (
-            <section
-              key={category.slug}
-              data-slug={category.slug}
-              className="classic-category-section"
+        <aside
+          className="classic-desktop-list-panel"
+          aria-labelledby="classic-desktop-list-title"
+        >
+          <header className="classic-desktop-list-header">
+            <h2 id="classic-desktop-list-title">{t(UI.myList)}</h2>
+            <strong
+              aria-live="polite"
+              aria-label={`${listTotals.count} ${t(UI.selectedItems)}`}
             >
-              <div className="classic-category-heading">
-                <span aria-hidden="true" />
-                <h2>{t(category.name)}</h2>
-                <span aria-hidden="true" />
-              </div>
-              {category.timeStart && category.timeEnd && (
-                <p className="classic-category-time">
-                  {category.timeStart} – {category.timeEnd}
-                </p>
-              )}
-              <ul className="classic-product-list">
-                {category.products.map((product, index) => (
-                  <ClassicProductRow
-                    key={product.id}
-                    product={product}
-                    quantity={menuList.get(product.id)}
-                    onIncrement={menuList.increment}
-                    onDecrement={menuList.decrement}
-                    onOpen={setOpenProduct}
-                    stagger={index}
-                  />
-                ))}
-              </ul>
-            </section>
-          ))
-        )}
+              {listTotals.count}
+            </strong>
+          </header>
 
-        <VenueFooter settings={menu.settings} />
-      </main>
+          <MenuListContent
+            className="classic-desktop-list-body"
+            products={selectedProducts}
+            quantities={menuList.quantities}
+            total={listTotals.total}
+            hasEstimate={listTotals.hasEstimate}
+            onIncrement={menuList.increment}
+            onDecrement={menuList.decrement}
+            onOpen={openFromList}
+          />
+
+          {selectedProducts.length > 0 && (
+            <MenuListClearButton
+              className="classic-desktop-list-clear"
+              onClear={menuList.clear}
+            />
+          )}
+        </aside>
+      </div>
 
       <MenuListBar
         count={listTotals.count}

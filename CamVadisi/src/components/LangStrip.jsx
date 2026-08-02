@@ -13,7 +13,7 @@ const LANG_ORDER = ["tr", "en", "ar", "ru"];
  * Dort esit sutun: yan yana `flex` denendi, 375px'te icerik 418px olup son dil tasiyordu.
  * Bayrak ustte + ad altta olunca tum adlar kirpilmadan sigar.
  */
-export function LangStrip({ className = "", tone = "dark" }) {
+export function LangStrip({ className = "", tone = "dark", onSelect }) {
   const { lang, setLang } = useLang();
 
   return (
@@ -29,7 +29,10 @@ export function LangStrip({ className = "", tone = "dark" }) {
           <button
             key={code}
             type="button"
-            onClick={() => setLang(code)}
+            onClick={() => {
+              setLang(code);
+              onSelect?.(code);
+            }}
             aria-pressed={active}
             lang={code}
             className={`flex min-w-0 flex-col items-center gap-1 rounded-lg px-1 py-1.5 text-[11px] font-semibold leading-none transition-colors ${
